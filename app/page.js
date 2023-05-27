@@ -114,21 +114,21 @@ const Main = () => {
                   </p>
                 </div>
                 <div className={mainStyles.cardContainer}>
-                  <Link href="predictions" className={mainStyles.link}>
+                  <a href="predictions" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
                     >
-                      <a> Predictions</a>
+                      Predictions
                     </div>
-                  </Link>
+                  </a>
 
                   <Link href="crystal-ball" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
                     >
-                      <a> Crystal Ball</a>
+                      Crystal Ball
                     </div>
                   </Link>
                 </div>
