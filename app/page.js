@@ -119,7 +119,7 @@ const Main = () => {
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
                     >
-                      Predictions
+                      <a> Predictions</a>
                     </div>
                   </Link>
 
@@ -128,7 +128,7 @@ const Main = () => {
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
                     >
-                      Crystal Ball
+                      <a> Crystal Ball</a>
                     </div>
                   </Link>
                 </div>
