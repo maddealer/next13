@@ -114,7 +114,7 @@ const Main = () => {
                   </p>
                 </div>
                 <div className={mainStyles.cardContainer}>
-                  <Link href="/predictions" className={mainStyles.link}>
+                  <Link href="predictions" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
@@ -123,7 +123,7 @@ const Main = () => {
                     </div>
                   </Link>
 
-                  <Link href="/crystal-ball" className={mainStyles.link}>
+                  <Link href="crystal-ball" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
@@ -136,7 +136,7 @@ const Main = () => {
                   className={mainStyles.cardContainer}
                   style={{ marginBottom: "30px" }}
                 >
-                  <Link href="/btts" className={mainStyles.link}>
+                  <Link href="btts" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
@@ -145,7 +145,7 @@ const Main = () => {
                     </div>
                   </Link>
 
-                  <Link href="/over25" className={mainStyles.link}>
+                  <Link href="over25" className={mainStyles.link}>
                     <div
                       className={mainStyles.card}
                       style={{ position: "relative", zIndex: "5" }}
