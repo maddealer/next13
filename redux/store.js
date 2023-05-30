@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import iconslice from "../redux/counterSlice";
-
+import predictionsSlice from "./predictionsSlice";
+import leagueReducer from "./leagueSlice";
 const store = configureStore({
   reducer: {
-    counter: iconslice,
+    predictions: predictionsSlice,
+    league: leagueReducer,
   },
 });
 
