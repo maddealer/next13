@@ -1,7 +1,7 @@
 import Loading from "./loading";
 import { Suspense } from "react";
 import { Providers } from "../redux/provider";
-
+import Menu from "./components/Menu";
 export const metadata = {
   title: "Match Predictor",
   description:

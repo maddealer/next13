@@ -4,6 +4,7 @@ import Link from "next/link";
 
 // import CookieConsent from "react-cookie-consent";
 import Image from "next/image";
+import Menu from "./components/Menu";
 // import Menu from "../Menu";
 
 const Main = () => {
@@ -11,7 +12,7 @@ const Main = () => {
     <div className={mainStyles.main}>
       <div className={mainStyles.box}>
         <div style={{ height: "100vh" }}>
-          {/* <Menu /> */}
+          <Menu />
           <div className={mainStyles.text}>
             <div
               style={{

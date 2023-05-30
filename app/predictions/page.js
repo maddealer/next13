@@ -21,6 +21,7 @@ import {
 } from "../../redux/leagueSlice";
 import predictionsClasses from "./Predictions.module.css";
 import PredictionsBubble from "../components/PredictionsBubble";
+import Menu from "../components/Menu";
 
 function Predictions() {
   const dispatch = useDispatch();
@@ -236,6 +237,7 @@ function Predictions() {
         </div>
       ) : (
         <div>
+          <Menu />
           <div style={{ marginBottom: "10px", marginTop: "20px" }}>
             <button
               className={predictionsClasses.button4}

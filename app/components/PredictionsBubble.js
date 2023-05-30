@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import bubbleStyles from "./PredictionsBubble.module.css";
+// import bubbleStyles from "./PredictionsBubble.module.css";
+import bubbleStyles from "./BubbleStyles.module.css";
 import { getCountryCode } from "../../utils/getCountryCode";
 import Link from "next/link";
 const PredictionsBubble = (props) => {
@@ -52,7 +53,6 @@ const PredictionsBubble = (props) => {
                 style={{
                   display: "flex",
                   justifyContent: "left",
-                  alignItems: "center",
                 }}
               >
                 {element.competition_cluster === "Champions League" ? (
@@ -63,7 +63,7 @@ const PredictionsBubble = (props) => {
                   <span></span>
                 ) : (
                   <div
-                    style={{ width: "45px", height: "25px" }}
+                    style={{ width: "1.2rem", height: "1rem" }}
                     className={`fi fi-${getCountryCode(
                       element.competition_cluster
                     )}`}
@@ -72,19 +72,18 @@ const PredictionsBubble = (props) => {
                 &nbsp;&nbsp;&nbsp;
                 <div
                   className={bubbleStyles.date}
-                  style={{ fontSize: "1.2em" }}
+                  style={{ fontSize: "1.1em" }}
                 >
-                  {element.competition_cluster}
+                  {element.competition_cluster} - {element.competition_name}{" "}
                 </div>
               </div>
               &nbsp;&nbsp;&nbsp;
               <div
                 className={bubbleStyles.date}
                 style={{
-                  fontSize: "1.2em",
+                  fontSize: "1.1em",
                   display: "flex",
                   justifyContent: "right",
-                  alignItems: "center",
                 }}
               >
                 {" "}
@@ -95,95 +94,52 @@ const PredictionsBubble = (props) => {
                 }`}{" "}
               </div>
             </div>
-            <div
-              className={bubbleStyles.rightData}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: "20px",
-              }}
-            >
-              {" "}
-              {element.competition_name}
-            </div>
 
-            <div
-              className={bubbleStyles.rightData}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: "20px",
-              }}
-            >
+            <div className={bubbleStyles.rightData}>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "100%",
+                  justifyContent: "left",
+                  width: "84%",
                 }}
               >
-                <p className={bubbleStyles.teams}>{element.home_team}</p>
+                <p className={bubbleStyles.federation} style={{ margin: "0" }}>
+                  {element.home_team}
+                </p>
                 <p
-                  className={bubbleStyles.teams}
-                  style={{ fontSize: "0.6rem" }}
+                  className={bubbleStyles.federation}
+                  style={{ fontSize: "0.6rem", margin: "0" }}
                 >
                   vs
                 </p>
-                <p className={bubbleStyles.teams}>{element.away_team}</p>
+                <p className={bubbleStyles.federation} style={{ margin: "0" }}>
+                  {element.away_team}
+                </p>
               </div>
-            </div>
-            <div className={bubbleStyles.rightData}>
-              {" "}
               <div className={bubbleStyles.leftData}>
-                <div
-                  className={bubbleStyles.odds}
-                  style={{
-                    fontSize: "2em",
-                    textShadow: "2px 2px 5px #767676",
-                    color: "#505050",
-                  }}
-                >
-                  <b>{element.prediction}</b>
+                <div className={bubbleStyles.odds}>
+                  {" "}
+                  {props.type === "U/O 2.5"
+                    ? "U/O 2.5"
+                    : element.market.toUpperCase()}{" "}
+                  <div className={bubbleStyles.odds}>
+                    <b>
+                      {props.type === "U/O 2.5"
+                        ? element.prediction === "yes"
+                          ? "OVER"
+                          : "UNDER"
+                        : element.prediction.toUpperCase()}
+                    </b>
+                  </div>
                 </div>
                 <div className={bubbleStyles.odds}>
-                  avg. odds {element.odds[element.prediction]}
+                  {" "}
+                  {element.odds[element.prediction]}
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                width: "100%",
-                marginTop: "15px",
-                display: "flex",
-                justifyContent: "right",
-              }}
-            >
-              <Link
-                //    className={predictionsClasses.cardbtn}
-                // to={`/details/${element.id}`}
-                href="/"
-                style={{
-                  textDecoration: "none",
-                  padding: "5px 10px",
-                  backgroundColor: "#50505070",
-                  color: "#ffffff",
-                  borderRadius: "15px",
-                  cursor: "pointer",
-                  boxShadow: "2px 1px 5px #9f9f9f",
-                  fontSize: "0.8em",
-                }}
-              >
-                DETAILS
-              </Link>
-            </div>
+            <Link href={`/predictions/${element.id}`}>Details</Link>
           </div>
         ))
       ) : (
