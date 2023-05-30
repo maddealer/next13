@@ -95,7 +95,12 @@ const PredictionsBubble = (props) => {
               </div>
             </div>
 
-            <div className={bubbleStyles.rightData}>
+            <div
+              className={bubbleStyles.rightData}
+              style={{
+                padding: "10px 0",
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -119,27 +124,40 @@ const PredictionsBubble = (props) => {
               </div>
               <div className={bubbleStyles.leftData}>
                 <div className={bubbleStyles.odds}>
-                  {" "}
-                  {props.type === "U/O 2.5"
-                    ? "U/O 2.5"
-                    : element.market.toUpperCase()}{" "}
-                  <div className={bubbleStyles.odds}>
-                    <b>
-                      {props.type === "U/O 2.5"
-                        ? element.prediction === "yes"
-                          ? "OVER"
-                          : "UNDER"
-                        : element.prediction.toUpperCase()}
+                  {element.market.toUpperCase()}
+                  <div
+                    className={bubbleStyles.odds}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <b style={{ fontSize: "1.2em" }}>
+                      {element.prediction.toUpperCase()}
                     </b>
                   </div>
                 </div>
-                <div className={bubbleStyles.odds}>
-                  {" "}
+                {/* <div className={bubbleStyles.odds}>
                   {element.odds[element.prediction]}
-                </div>
+                </div> */}
               </div>
             </div>
-            <Link href={`/predictions/${element.id}`}>Details</Link>
+            <Link
+              href={`/predictions/${element.id}`}
+              style={{
+                textDecoration: "none",
+                padding: "5px 10px",
+                backgroundColor: "#50505070",
+                color: "#ffffff",
+                borderRadius: "15px",
+                cursor: "pointer",
+                boxShadow: "2px 1px 5px #9f9f9f",
+                fontSize: "0.8em",
+              }}
+            >
+              Details
+            </Link>
           </div>
         ))
       ) : (

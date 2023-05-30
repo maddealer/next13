@@ -20,6 +20,7 @@ const Main = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+                textAlign: "center",
                 padding: "10px 10px",
                 marginBottom: "50px",
               }}

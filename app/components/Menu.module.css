@@ -3,14 +3,16 @@
 
 
 .container {
-    font-family: "Poppins", sans-serif;
-  max-width: 1050px;
+    font-family:'Roboto',sans-serif;
+    max-width: 1050px;
   width: 90%;
   margin: auto;
 }
 
 
 .navbar {
+    font-family:'Roboto',sans-serif;
+
   width: 100%;
   box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
   background-color: #e3e4e6;
