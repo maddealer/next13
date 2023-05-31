@@ -22,7 +22,7 @@ const About = () => {
                 objectFit: "cover",
                 WebkitTapHighlightColor: "transparent",
               }}
-              src="/manueliosdone.png"
+              src="/manuelIosdone.png"
               width={300}
               height={200}
               alt="ball"
