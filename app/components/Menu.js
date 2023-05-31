@@ -61,22 +61,22 @@ export default function Menu(props) {
                     Crystal Ball
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/about" onClick={() => handleChange()}>
+                <li>
+                  <Link href="/about" onClick={() => handleChange()}>
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" onClick={() => handleChange()}>
+                  <Link href="/terms" onClick={() => handleChange()}>
                     Terms of Use
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" onClick={() => handleChange()}>
+                  <Link href="/privacy" onClick={() => handleChange()}>
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/contacts" onClick={() => handleChange()}>
                     Contacts
                   </Link>

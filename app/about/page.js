@@ -1,48 +1,114 @@
-"use client";
+import Menu from "../components/Menu";
+import aboutStyles from "./About.module.css";
+import Image from "next/image";
 
-import Link from "next/link";
-import axios from "axios";
-import { useEffect, useState } from "react";
 const About = () => {
-  const [first, setFirst] = useState({});
-  const options = {
-    method: "GET",
-    url: "https://football-prediction-api.p.rapidapi.com/api/v2/predictions",
-    params: {
-      market: "classic",
-
-      federation: "UEFA",
-    },
-    headers: {
-      "X-RapidAPI-Key": "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-      "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
-    },
-  };
-  useEffect(() => {
-    getAll();
-  }, []);
-  const getAll = async () => {
-    try {
-      const response = await axios.request(options);
-      console.log(response.data.data[0]);
-      setFirst(response.data.data[0]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   return (
-    <div>
-      <h1>About</h1>
-      {first ? (
-        <div>
-          <h1>{first.competition_cluster}</h1>
-          <p>{first.home_team}</p>
-          <p>vs</p>
-          <p>{first.away_team}</p>
+    <>
+      <Menu />
+      <div className={aboutStyles.bg}>
+        <div className={aboutStyles.container}>
+          <article>
+            <h5 className={aboutStyles.header}>About Us</h5>
+            <p className={aboutStyles.aboutP}>
+              MatchPredictor.net is a PWA( Progressive Web App ), it can be
+              installed on any device, when you choose your browser option "Add
+              to home screen".
+            </p>
+            <h5 style={{ marginBottom: "10px" }}>For IOS Install</h5>
+            <Image
+              style={{
+                height: "260px",
+                objectFit: "cover",
+                WebkitTapHighlightColor: "transparent",
+              }}
+              src="/manueliosdone.png"
+              width={300}
+              height={200}
+              alt="ball"
+            />
+
+            <h5 style={{ marginTop: "20px", marginBottom: "10px" }}>
+              For Android Install
+            </h5>
+
+            <Image
+              style={{
+                height: "200px",
+                objectFit: "cover",
+                WebkitTapHighlightColor: "transparent",
+              }}
+              src="/andAdd.png"
+              width={100}
+              height={200}
+              alt="ball"
+            />
+          </article>
+          <article>
+            <h4 style={{ marginTop: "20px", marginBottom: "10px" }}>
+              Our Goal
+            </h4>
+            <p className={aboutStyles.aboutP}>
+              The idea behind MatchPredictor.net is to provide a simple and easy
+              to use application.
+            </p>
+            <p className={aboutStyles.aboutP}>
+              We use one of the most common API, with specially developed
+              algorithms and mathematical calculations.
+            </p>
+            <p className={aboutStyles.aboutP}>
+              Some of the parameters used for the predictions are:
+            </p>
+            <ul className={aboutStyles.aboutUl}>
+              <li>
+                Historical stats (avg goals scored, clean sheets, etc) of team A
+                vs teams similar to team B.
+              </li>
+              <li>Poisson probabilities.</li>
+              <li>League statistics.</li>
+              <li>How the two teams compare against the league.</li>
+              <li>Other factors (stadium capacity, distance between teams)</li>
+            </ul>
+            <p className={aboutStyles.aboutP}>
+              Maximum time ahead before a prediction is available is 48 hours.
+            </p>
+          </article>
+          <article>
+            <p className={aboutStyles.aboutP}>
+              If a certain event does not appear as a prediction, there could be
+              multiple causes for that including:
+            </p>
+            <ul className={aboutStyles.aboutUl}>
+              <li>The league / country is not supported.</li>
+              <li>The event is over 48h ahead.</li>
+              <li>It involves a newly promoted or relegated team.</li>
+              <li>
+                There aren't enough games played against similar adversaries.
+              </li>
+              <li>
+                The prediction models are not confident enough to predict the
+                outcome.
+              </li>
+            </ul>
+          </article>
+          <article>
+            <p className={aboutStyles.aboutP}>
+              In the future, the application will develop and new options will
+              be added.
+            </p>
+          </article>
+          <p
+            style={{
+              color: "#505050",
+              marginTop: "40px",
+              marginBottom: "20px",
+            }}
+          >
+            Good Luck & Have Fun.
+          </p>
         </div>
-      ) : null}{" "}
-      <Link href="/">Go to home</Link>
-    </div>
+      </div>
+    </>
   );
 };
 
