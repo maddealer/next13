@@ -16,10 +16,12 @@ import {
   faFutbol,
 } from "@fortawesome/free-solid-svg-icons";
 import predictionsClasses from "../Predictions.module.css";
+import aboutStyles from "../../about/About.module.css";
 import detailsClasses from "./Details.module.css";
 import bubbleStyles from "../../components/PredictionsBubble.module.css";
 import Menu from "../../components/Menu";
 import { getCountryCode } from "../../../utils/getCountryCode";
+import Footer from "@/app/components/Footer";
 export default function Details({ params }) {
   const routeParams = params.details;
   const [data, setData] = useState();
@@ -48,9 +50,8 @@ export default function Details({ params }) {
         method: "GET",
         url: `https://football-prediction-api.p.rapidapi.com/api/v2/predictions/${id}`,
         headers: {
-          "X-RapidAPI-Key":
-            "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-          "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
+          "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+          "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
         },
       };
 
@@ -78,8 +79,8 @@ export default function Details({ params }) {
       url: `https://football-prediction-api.p.rapidapi.com/api/v2/head-to-head/${id}`,
       params: { limit: "10" },
       headers: {
-        "X-RapidAPI-Key": "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-        "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+        "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
       },
     };
     const optionsHomeD = {
@@ -87,8 +88,8 @@ export default function Details({ params }) {
       url: `https://football-prediction-api.p.rapidapi.com/api/v2/home-last-10/${id}`,
       params: { limit: "10" },
       headers: {
-        "X-RapidAPI-Key": "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-        "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+        "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
       },
     };
     const optionsAwayD = {
@@ -96,8 +97,8 @@ export default function Details({ params }) {
       url: `https://football-prediction-api.p.rapidapi.com/api/v2/away-last-10/${id}`,
       params: { limit: "10" },
       headers: {
-        "X-RapidAPI-Key": "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-        "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+        "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
       },
     };
 
@@ -171,464 +172,470 @@ export default function Details({ params }) {
   };
 
   return (
-    <div>
-      <Menu />
-      <div
-        className={bubbleStyles.detailsFont}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+    <>
+      <div style={{ background: "#d2e9ff" }}>
+        <Menu />
         <div
+          className={bubbleStyles.detailsFont}
           style={{
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
-            minHeight: "90vh",
             alignItems: "center",
-            marginTop: "30px",
-            width: "95%",
           }}
         >
-          {data !== undefined ? (
-            <>
-              <div
-                className={bubbleStyles.ticket}
-                style={{ width: "94%", maxWidth: "500px" }}
-              >
+          <h5 className={bubbleStyles.header} style={{ marginBottom: "0" }}>
+            Match Details
+          </h5>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              minHeight: "90vh",
+              alignItems: "center",
+              width: "95%",
+              marginTop: "30px",
+            }}
+          >
+            {data !== undefined ? (
+              <>
                 <div
-                  className={bubbleStyles.dateMain}
-                  style={{ flexDirection: "row" }}
+                  className={bubbleStyles.ticket}
+                  style={{ width: "94%", maxWidth: "500px" }}
                 >
-                  {" "}
                   <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "left",
-                      alignItems: "center",
-                    }}
+                    className={bubbleStyles.dateMain}
+                    style={{ flexDirection: "row" }}
                   >
-                    {data.competition_cluster === "Champions League" ? (
-                      <FontAwesomeIcon icon={faFutbol} size="2x" />
-                    ) : data.competition_cluster === "Europa League" ? (
-                      <FontAwesomeIcon icon={faTrophy} size="2x" />
-                    ) : (
+                    {" "}
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "left",
+                        alignItems: "center",
+                      }}
+                    >
+                      {data.competition_cluster === "Champions League" ? (
+                        <FontAwesomeIcon icon={faFutbol} size="2x" />
+                      ) : data.competition_cluster === "Europa League" ? (
+                        <FontAwesomeIcon icon={faTrophy} size="2x" />
+                      ) : (
+                        <div
+                          style={{ width: "45px", height: "25px" }}
+                          className={`fi fi-${getCountryCode(
+                            data.competition_cluster
+                          )}`}
+                        ></div>
+                      )}
+                      &nbsp;&nbsp;&nbsp;
                       <div
-                        style={{ width: "45px", height: "25px" }}
-                        className={`fi fi-${getCountryCode(
-                          data.competition_cluster
-                        )}`}
-                      ></div>
-                    )}
+                        className={bubbleStyles.date}
+                        style={{ fontSize: "1.2em" }}
+                      >
+                        {data.competition_cluster}
+                      </div>
+                    </div>
                     &nbsp;&nbsp;&nbsp;
                     <div
                       className={bubbleStyles.date}
-                      style={{ fontSize: "1.2em" }}
+                      style={{
+                        fontSize: "1.2em",
+                        display: "flex",
+                        justifyContent: "right",
+                        alignItems: "center",
+                      }}
                     >
-                      {data.competition_cluster}
+                      {" "}
+                      {`${
+                        zone !== ""
+                          ? convertTZ(data.start_date + "+0000", zone)
+                          : null
+                      }`}{" "}
                     </div>
                   </div>
-                  &nbsp;&nbsp;&nbsp;
                   <div
-                    className={bubbleStyles.date}
-                    style={{
-                      fontSize: "1.2em",
-                      display: "flex",
-                      justifyContent: "right",
-                      alignItems: "center",
-                    }}
+                    className={bubbleStyles.dateMain}
+                    style={{ flexDirection: "column", color: "#505050" }}
                   >
-                    {" "}
-                    {`${
-                      zone !== ""
-                        ? convertTZ(data.start_date + "+0000", zone)
-                        : null
-                    }`}{" "}
-                  </div>
-                </div>
-                <div
-                  className={bubbleStyles.dateMain}
-                  style={{ flexDirection: "column", color: "#505050" }}
-                >
-                  <p style={{ fontSize: "1.5em", marginBottom: "20px" }}>
-                    {data.competition_name}
-                  </p>
+                    <p style={{ fontSize: "1.5em", marginBottom: "20px" }}>
+                      {data.competition_name}
+                    </p>
 
-                  <p
-                    style={{
-                      fontSize: "2em",
-                      fontWeight: "bold",
-                      color: "#505050",
-                    }}
-                  >
-                    {data.home_team}
-                  </p>
-                  <p>vs</p>
-                  <p
-                    style={{
-                      fontSize: "2em",
-                      fontWeight: "bold",
-                      color: "#505050",
-                    }}
-                  >
-                    {data.away_team}
-                  </p>
+                    <p
+                      style={{
+                        fontSize: "2em",
+                        fontWeight: "bold",
+                        color: "#505050",
+                      }}
+                    >
+                      {data.home_team}
+                    </p>
+                    <p>vs</p>
+                    <p
+                      style={{
+                        fontSize: "2em",
+                        fontWeight: "bold",
+                        color: "#505050",
+                      }}
+                    >
+                      {data.away_team}
+                    </p>
 
-                  <p
-                    style={{
-                      fontSize: "1.5em",
-                      fontWeight: "bold",
-                      color: "#505050",
-                      marginTop: "20px",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    Available Predictions
-                  </p>
+                    <p
+                      style={{
+                        fontSize: "1.5em",
+                        fontWeight: "bold",
+                        color: "#505050",
+                        marginTop: "20px",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Available Predictions
+                    </p>
 
-                  {data.available_markets.map((el, index) => {
-                    return (
-                      <>
-                        <div
-                          key={index + 123456}
-                          style={{
-                            width: "100%",
-                            display: "flex",
-                            alignItems: "center",
-                            marginLeft: "10px",
-                            marginBottom: "5px",
-                          }}
-                        >
+                    {data.available_markets.map((el, index) => {
+                      return (
+                        <>
                           <div
+                            key={index + 123456}
                             style={{
+                              width: "100%",
                               display: "flex",
-                              justifyContent: "left",
-                              fontSize: "1.4em",
-                              minWidth: "60%",
-                            }}
-                          >
-                            {markets[el]}
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "left",
-                              fontSize: "1.4em",
-                              minWidth: "23%",
-                            }}
-                          >
-                            <b
-                              style={{
-                                fontWeight: "800",
-                              }}
-                            >
-                              {data.prediction_per_market[
-                                el
-                              ].prediction.toUpperCase()}
-                            </b>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "right",
                               alignItems: "center",
-                              textAlign: "center",
-                              fontSize: "1.4em",
+                              marginLeft: "10px",
+                              marginBottom: "5px",
                             }}
                           >
-                            {" "}
-                            {data.prediction_per_market[el].odds[
-                              data.prediction_per_market[el].prediction
-                            ]
-                              ? data.prediction_per_market[el].odds[
-                                  data.prediction_per_market[el].prediction
-                                ]
-                              : "*"}
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "left",
+                                fontSize: "1.4em",
+                                minWidth: "60%",
+                              }}
+                            >
+                              {markets[el]}
+                            </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "left",
+                                fontSize: "1.4em",
+                                minWidth: "23%",
+                              }}
+                            >
+                              <b
+                                style={{
+                                  fontWeight: "800",
+                                }}
+                              >
+                                {data.prediction_per_market[
+                                  el
+                                ].prediction.toUpperCase()}
+                              </b>
+                            </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "right",
+                                alignItems: "center",
+                                textAlign: "center",
+                                fontSize: "1.4em",
+                              }}
+                            >
+                              {" "}
+                              {data.prediction_per_market[el].odds[
+                                data.prediction_per_market[el].prediction
+                              ]
+                                ? data.prediction_per_market[el].odds[
+                                    data.prediction_per_market[el].prediction
+                                  ]
+                                : "*"}
+                            </div>
                           </div>
-                        </div>
-                      </>
-                    );
-                  })}
-                </div>
-              </div>
-              <br />
-              {/* //FROM HERE STATS */}
-              {!showStats ? (
-                <button
-                  className={detailsClasses.button5}
-                  onClick={() => getStats(routeParams)}
-                >
-                  Load More Stats
-                </button>
-              ) : null}
-              {showStats ? (
-                <>
-                  <div
-                    className={bubbleStyles.ticket}
-                    style={{ width: "94%", maxWidth: "500px" }}
-                  >
-                    <br />
-                    <p
-                      style={{
-                        fontSize: "0.8em",
-                        fontWeight: "bold",
-                        color: "#505050",
-                        marginTop: "20px",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      Head to Head Matches Last 10
-                    </p>
-                    <br />
-                    {head !== undefined ? (
-                      head.map((element, index) => {
-                        return (
-                          <>
-                            <div
-                              key={`${index + element.start_date}`}
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-evenly",
-                                fontSize: "0.8rem",
-                                margin: "5px 10px",
-                                width: "100%",
-                              }}
-                            >
-                              {date(element.start_date)}
-                              <div
-                                style={{
-                                  width: "90%",
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  marginLeft: "10px",
-                                }}
-                              >
-                                {" "}
-                                {checkWinner(
-                                  element.home_team,
-                                  element.away_team,
-                                  element.fulltime_result
-                                )}
-                              </div>
-                            </div>
-                            <hr />
-                          </>
-                        );
-                      })
-                    ) : !loadHead ? (
-                      <p>No Data</p>
-                    ) : (
-                      <>
-                        <div className={predictionsClasses.ldsspinner}>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      </>
-                    )}
-                    {/* homeData */}
-                    <br />
-                    <p
-                      style={{
-                        fontSize: "0.8em",
-                        fontWeight: "bold",
-                        color: "#505050",
-                        marginTop: "20px",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      Last Matches:&nbsp;{data.home_team}
-                    </p>
-                    <br />
-                    {homeD !== undefined ? (
-                      homeD.map((element, index) => {
-                        return (
-                          <>
-                            <div
-                              key={`${index + element.start_date + 123456}`}
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-evenly",
-                                fontSize: "0.8rem",
-                                margin: "5px 10px",
-                                width: "100%",
-                              }}
-                            >
-                              {date(element.start_date)}
-                              <div
-                                style={{
-                                  width: "90%",
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  marginLeft: "10px",
-                                }}
-                              >
-                                {" "}
-                                {checkHomeD(
-                                  data.home_team,
-                                  element.played_against,
-                                  element.result,
-                                  element.fulltime_result,
-                                  element.played_away
-                                )}
-                              </div>
-                              <div
-                                style={{
-                                  display: "flex",
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                  marginLeft: "5px",
-                                }}
-                              >
-                                {colorSquare(element.result)}
-                              </div>
-                            </div>
-                            <hr />
-                          </>
-                        );
-                      })
-                    ) : !loadHomeD ? (
-                      <p>No Data</p>
-                    ) : (
-                      <>
-                        <div className={predictionsClasses.ldsspinner}>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      </>
-                    )}
-                    {/* awayData */}
-                    <br />
-                    <p
-                      style={{
-                        fontSize: "0.8em",
-                        fontWeight: "bold",
-                        color: "#505050",
-                        marginTop: "20px",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      Last Matches:&nbsp;{data.away_team}
-                    </p>
-                    <br />
-                    {awayD !== undefined ? (
-                      awayD.map((element, index) => {
-                        return (
-                          <>
-                            <div
-                              key={`${index + element.start_date + 1234567}`}
-                              style={{
-                                display: "flex",
-                                justifyContent: "space-evenly",
-                                fontSize: "0.8rem",
-                                margin: "5px 10px",
-                                width: "100%",
-                              }}
-                            >
-                              {date(element.start_date)}
-                              <div
-                                style={{
-                                  width: "90%",
-                                  display: "flex",
-                                  justifyContent: "space-between",
-                                  marginLeft: "10px",
-                                }}
-                              >
-                                {" "}
-                                {checkHomeD(
-                                  data.away_team,
-                                  element.played_against,
-                                  element.result,
-                                  element.fulltime_result,
-                                  element.played_away
-                                )}
-                              </div>
-                              <div
-                                style={{
-                                  display: "flex",
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                  marginLeft: "5px",
-                                }}
-                              >
-                                {colorSquare(element.result)}
-                              </div>
-                            </div>
-                            <hr />
-                          </>
-                        );
-                      })
-                    ) : !loadAwayD ? (
-                      <p>No Data</p>
-                    ) : (
-                      <>
-                        <div className={predictionsClasses.ldsspinner}>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      </>
-                    )}
+                        </>
+                      );
+                    })}
                   </div>
-                </>
-              ) : null}
+                </div>
+                <br />
+                {/* //FROM HERE STATS */}
+                {!showStats ? (
+                  <button
+                    className={detailsClasses.button5}
+                    onClick={() => getStats(routeParams)}
+                  >
+                    Load More Stats
+                  </button>
+                ) : null}
+                {showStats ? (
+                  <>
+                    <div
+                      className={bubbleStyles.ticket}
+                      style={{ width: "94%", maxWidth: "500px" }}
+                    >
+                      <br />
+                      <p
+                        style={{
+                          fontSize: "0.8em",
+                          fontWeight: "bold",
+                          color: "#505050",
+                          marginTop: "20px",
+                          marginBottom: "10px",
+                        }}
+                      >
+                        Head to Head Matches Last 10
+                      </p>
+                      <br />
+                      {head !== undefined ? (
+                        head.map((element, index) => {
+                          return (
+                            <>
+                              <div
+                                key={`${index + element.start_date}`}
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-evenly",
+                                  fontSize: "0.8rem",
+                                  margin: "5px 10px",
+                                  width: "100%",
+                                }}
+                              >
+                                {date(element.start_date)}
+                                <div
+                                  style={{
+                                    width: "90%",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    marginLeft: "10px",
+                                  }}
+                                >
+                                  {" "}
+                                  {checkWinner(
+                                    element.home_team,
+                                    element.away_team,
+                                    element.fulltime_result
+                                  )}
+                                </div>
+                              </div>
+                              <hr />
+                            </>
+                          );
+                        })
+                      ) : !loadHead ? (
+                        <p>No Data</p>
+                      ) : (
+                        <>
+                          <div className={predictionsClasses.ldsspinner}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </>
+                      )}
+                      {/* homeData */}
+                      <br />
+                      <p
+                        style={{
+                          fontSize: "0.8em",
+                          fontWeight: "bold",
+                          color: "#505050",
+                          marginTop: "20px",
+                          marginBottom: "10px",
+                        }}
+                      >
+                        Last Matches:&nbsp;{data.home_team}
+                      </p>
+                      <br />
+                      {homeD !== undefined ? (
+                        homeD.map((element, index) => {
+                          return (
+                            <>
+                              <div
+                                key={`${index + element.start_date + 123456}`}
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-evenly",
+                                  fontSize: "0.8rem",
+                                  margin: "5px 10px",
+                                  width: "100%",
+                                }}
+                              >
+                                {date(element.start_date)}
+                                <div
+                                  style={{
+                                    width: "90%",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    marginLeft: "10px",
+                                  }}
+                                >
+                                  {" "}
+                                  {checkHomeD(
+                                    data.home_team,
+                                    element.played_against,
+                                    element.result,
+                                    element.fulltime_result,
+                                    element.played_away
+                                  )}
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    marginLeft: "5px",
+                                  }}
+                                >
+                                  {colorSquare(element.result)}
+                                </div>
+                              </div>
+                              <hr />
+                            </>
+                          );
+                        })
+                      ) : !loadHomeD ? (
+                        <p>No Data</p>
+                      ) : (
+                        <>
+                          <div className={predictionsClasses.ldsspinner}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </>
+                      )}
+                      {/* awayData */}
+                      <br />
+                      <p
+                        style={{
+                          fontSize: "0.8em",
+                          fontWeight: "bold",
+                          color: "#505050",
+                          marginTop: "20px",
+                          marginBottom: "10px",
+                        }}
+                      >
+                        Last Matches:&nbsp;{data.away_team}
+                      </p>
+                      <br />
+                      {awayD !== undefined ? (
+                        awayD.map((element, index) => {
+                          return (
+                            <>
+                              <div
+                                key={`${index + element.start_date + 1234567}`}
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-evenly",
+                                  fontSize: "0.8rem",
+                                  margin: "5px 10px",
+                                  width: "100%",
+                                }}
+                              >
+                                {date(element.start_date)}
+                                <div
+                                  style={{
+                                    width: "90%",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    marginLeft: "10px",
+                                  }}
+                                >
+                                  {" "}
+                                  {checkHomeD(
+                                    data.away_team,
+                                    element.played_against,
+                                    element.result,
+                                    element.fulltime_result,
+                                    element.played_away
+                                  )}
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    marginLeft: "5px",
+                                  }}
+                                >
+                                  {colorSquare(element.result)}
+                                </div>
+                              </div>
+                              <hr />
+                            </>
+                          );
+                        })
+                      ) : !loadAwayD ? (
+                        <p>No Data</p>
+                      ) : (
+                        <>
+                          <div className={predictionsClasses.ldsspinner}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </>
+                ) : null}
 
-              <br />
+                {/* <br />
               <p style={{ fontSize: "0.7rem" }}>
                 MatchPredictor.net supports responsible betting 18+
-              </p>
-            </>
-          ) : (
-            <>
-              <div className={predictionsClasses.ldsspinner}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </>
-          )}
+              </p> */}
+              </>
+            ) : (
+              <>
+                <div className={predictionsClasses.ldsspinner}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

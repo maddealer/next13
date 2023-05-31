@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import policyStyles from "../terms/Terms.module.css";
 const Privacy = () => {
@@ -123,6 +124,7 @@ const Privacy = () => {
           <p className={policyStyles.termsP}>Last edited on 01/10/2023.</p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

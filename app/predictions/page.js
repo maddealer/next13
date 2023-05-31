@@ -6,6 +6,13 @@ import { allData } from "../../redux/predictionsSlice";
 import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 // import { getCountryCode } from "../utils/getCountryCode";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUp,
+  faFutbolBall,
+  faTrophy,
+  faFutbol,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   federationBtnColor,
   leagueBtnColor,
@@ -22,6 +29,7 @@ import {
 import predictionsClasses from "./Predictions.module.css";
 import PredictionsBubble from "../components/PredictionsBubble";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 
 function Predictions() {
   const dispatch = useDispatch();
@@ -37,9 +45,8 @@ function Predictions() {
           market: "classic",
         },
         headers: {
-          "X-RapidAPI-Key":
-            "752fab4499msh375549feb0a160ep1567e1jsn47becd0a461f",
-          "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com",
+          "X-RapidAPI-Key": process.env.NEXT_PUBLIC_API_KEY,
+          "X-RapidAPI-Host": process.env.NEXT_PUBLIC_API_HOST,
         },
       };
 
@@ -70,6 +77,15 @@ function Predictions() {
     setZone(timeZone);
     // console.log("zone", zone);
   }, [zone]);
+  useEffect(() => {
+    const handleScrollBtn = () => {
+      window.pageYOffset > 200 ? setShowButton(true) : setShowButton(false);
+    };
+    window.addEventListener("scroll", handleScrollBtn);
+    return () => {
+      window.removeEventListener("scroll", handleScrollBtn);
+    };
+  }, []);
 
   useEffect(() => {
     //console.log("DATA", data);
@@ -236,7 +252,7 @@ function Predictions() {
           </div>
         </div>
       ) : (
-        <div>
+        <div style={{ background: "#d2e9ff" }}>
           <Menu />
           <div
             style={{
@@ -660,7 +676,13 @@ function Predictions() {
                   </div>
                 </>
               ) : (
-                <div style={{ padding: "0 10px", marginTop: "15px" }}>
+                <div
+                  style={{
+                    padding: "0 10px",
+                    marginTop: "15px",
+                    minHeight: "70vh",
+                  }}
+                >
                   {" "}
                   Sorry, there is no predictions for this Federation at the
                   moment.
@@ -670,8 +692,32 @@ function Predictions() {
               rejected
             )}
           </div>
+          {showButton ? (
+            <button
+              className={predictionsClasses.up}
+              style={{
+                position: "fixed",
+                bottom: "20px",
+                right: "0",
+                marginTop: "15px",
+                width: "40px",
+                height: "60px",
+                zIndex: "1",
+              }}
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
+              <FontAwesomeIcon icon={faArrowUp} size="lg" />
+            </button>
+          ) : null}
         </div>
       )}
+      <Footer />
     </>
   );
 }

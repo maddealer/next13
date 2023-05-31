@@ -49,6 +49,7 @@ const PredictionsBubble = (props) => {
         marginTop: "20px",
         width: "100%",
         maxWidth: "500px",
+        minHeight: "70vh",
       }}
     >
       {classicData && classicData.length > 0 ? (
@@ -181,7 +182,7 @@ const PredictionsBubble = (props) => {
           <div></div>
         </div>
       )}
-      <div
+      {/* <div
         style={{
           marginBottom: "15px",
           marginTop: "15px",
@@ -197,7 +198,7 @@ const PredictionsBubble = (props) => {
         <p style={{ fontSize: "0.6rem" }}>
           *responsible betting. not financial advice
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

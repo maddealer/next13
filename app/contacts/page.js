@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 
 import aboutStyles from "../about/About.module.css";
+import Footer from "../components/Footer";
 
 const Contacts = () => {
   return (
@@ -38,6 +39,7 @@ const Contacts = () => {
           </article>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

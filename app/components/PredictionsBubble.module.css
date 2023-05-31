@@ -105,7 +105,11 @@
         }
         }
         
-
+        .header{
+          color:#505050;
+          text-shadow: 0.05em 0.05em rgba(172, 172, 172, 0.7);
+          font-size: 1.6em;
+      }
 
 
     /* spinner */
