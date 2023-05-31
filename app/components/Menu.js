@@ -76,11 +76,11 @@ export default function Menu(props) {
                     Privacy Policy
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/contacts" onClick={() => handleChange()}>
+                <li>
+                  <Link href="/contacts" onClick={() => handleChange()}>
                     Contacts
                   </Link>
-                </li> */}
+                </li>
               </>
             </div>
           </div>

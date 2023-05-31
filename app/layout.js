@@ -2,6 +2,9 @@ import Loading from "./loading";
 import { Suspense } from "react";
 import { Providers } from "../redux/provider";
 import Menu from "./components/Menu";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 export const metadata = {
   title: "Match Predictor",
   description:

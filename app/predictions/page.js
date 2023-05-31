@@ -238,7 +238,15 @@ function Predictions() {
       ) : (
         <div>
           <Menu />
-          <div style={{ marginBottom: "10px", marginTop: "20px" }}>
+          <div
+            style={{
+              marginBottom: "10px",
+              marginTop: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <button
               className={predictionsClasses.button4}
               onClick={() => {
@@ -338,7 +346,16 @@ function Predictions() {
           {/* UEFA BUTTONS LEAGUES */}
 
           {federation === "UEFA" && Object.keys(dataLoadet).length !== 0 ? (
-            <div>
+            <div
+              style={{
+                marginBottom: "10px",
+                marginTop: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
               <button
                 className={predictionsClasses.button5}
                 onClick={() => {
@@ -459,7 +476,16 @@ function Predictions() {
           {/* CONCACAF BUTTONS LEAGUES */}
 
           {federation === "CONCACAF" && Object.keys(dataLoadet).length !== 0 ? (
-            <div>
+            <div
+              style={{
+                marginBottom: "10px",
+                marginTop: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
               <button
                 className={predictionsClasses.button5}
                 onClick={() => {
@@ -532,7 +558,16 @@ function Predictions() {
           {/* CONMEBOL BUTTONS LEAGUES */}
 
           {federation === "CONMEBOL" && Object.keys(dataLoadet).length !== 0 ? (
-            <div>
+            <div
+              style={{
+                marginBottom: "10px",
+                marginTop: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
               <button
                 className={predictionsClasses.button5}
                 onClick={() => {

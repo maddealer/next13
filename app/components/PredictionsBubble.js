@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 // import bubbleStyles from "./PredictionsBubble.module.css";
 import bubbleStyles from "./BubbleStyles.module.css";
 import { getCountryCode } from "../../utils/getCountryCode";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowUp,
+  faFutbolBall,
+  faTrophy,
+  faFutbol,
+} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 const PredictionsBubble = (props) => {
   const [zone, setZone] = useState("");
@@ -56,11 +63,9 @@ const PredictionsBubble = (props) => {
                 }}
               >
                 {element.competition_cluster === "Champions League" ? (
-                  //   <FontAwesomeIcon icon={faFutbol} size="2x" />
-                  <span></span>
+                  <FontAwesomeIcon icon={faFutbol} size="2x" />
                 ) : element.competition_cluster === "Europa League" ? (
-                  //   <FontAwesomeIcon icon={faTrophy} size="2x" />
-                  <span></span>
+                  <FontAwesomeIcon icon={faTrophy} size="2x" />
                 ) : (
                   <div
                     style={{ width: "1.2rem", height: "1rem" }}
@@ -176,7 +181,17 @@ const PredictionsBubble = (props) => {
           <div></div>
         </div>
       )}
-      <div style={{ marginTop: "15px", marginBottom: "15px" }}>
+      <div
+        style={{
+          marginBottom: "15px",
+          marginTop: "15px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
         {" "}
         <p style={{ fontSize: "0.7rem" }}>MatchPredictor.net</p>
         <p style={{ fontSize: "0.6rem" }}>
