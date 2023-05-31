@@ -174,11 +174,11 @@ export default function Details({ params }) {
     <div>
       <Menu />
       <div
+        className={bubbleStyles.detailsFont}
         style={{
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
-
           alignItems: "center",
         }}
       >

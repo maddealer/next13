@@ -13,6 +13,10 @@
     
     
     }
+    .detailsFont{
+      font-family:'Roboto',sans-serif;
+
+    }
     .date{
     display: flex;
     justify-content: center;
