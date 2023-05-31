@@ -261,6 +261,7 @@ function Predictions() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexWrap: "wrap",
             }}
           >
             <button
