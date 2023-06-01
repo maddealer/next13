@@ -4,6 +4,7 @@ import { Providers } from "../redux/provider";
 import Menu from "./components/Menu";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import GoogleAnalytics from "./components/GoogleAnalitycs";
 config.autoAddCss = false;
 export const metadata = {
   title: "Match Predictor",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Suspense fallback={<Loading />}>
+        <GoogleAnalytics GA_TRACKING_ID={process.env.GA_TRACKING_ID} />
         <body>
           <Providers>{children}</Providers>
         </body>
