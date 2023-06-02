@@ -26,6 +26,9 @@ const CrystalBall = () => {
   const [zone, setZone] = useState("");
   const [msg, setMsg] = useState("");
   const [showDiv, setShowDiv] = useState(false);
+  const [load1, setLoad1] = useState(true);
+  const [load2, setLoad2] = useState(true);
+
   // const data1 = useSelector(data);
   // useEffect(() => {
   //   if (data1) {
@@ -58,7 +61,7 @@ const CrystalBall = () => {
           return a.odds[a.prediction] !== null;
         });
         setLocalData(withOdds);
-        console.log(data1);
+        setLoad1(false);
       } catch (error) {
         console.log(error);
       }
@@ -85,7 +88,7 @@ const CrystalBall = () => {
           return a.odds[a.prediction] !== null;
         });
         setBtts(withOdds);
-        console.log(data1);
+        setLoad2(false);
       } catch (error) {
         console.log(error);
       }
@@ -188,266 +191,301 @@ const CrystalBall = () => {
 
   return (
     <>
-      <div className={crystalStyles.bg}>
-        <Menu />
-        <div className={crystalStyles.header}>
-          <h5 style={{ fontSize: "1.6em", margin: "0" }}>Crystal Ball</h5>
-          <p
-            style={{
-              fontSize: "0.8rem",
-              textShadow: "none",
-              fontWeight: "bold",
-            }}
-          >
-            Is a random generated Treble.
-          </p>
-          <p
-            style={{
-              fontSize: "0.8rem",
-              textShadow: "none",
-              fontWeight: "bold",
-              padding: "0 15px",
-            }}
-          >
-            If you dont know what to play, just ask the Crystal Ball.
-          </p>{" "}
-          <p
-            style={{ fontSize: "0.8rem", color: "#505050", marginTop: "20px" }}
-          >
-            Click the Ball. Get your lucky Ticket.
-          </p>
-        </div>
+      {!load1 && !load2 ? (
+        <>
+          <div className={crystalStyles.bg}>
+            <Menu />
+            <div className={crystalStyles.header}>
+              <h5 style={{ fontSize: "1.6em", margin: "0" }}>Crystal Ball</h5>
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  textShadow: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Is a random generated Treble.
+              </p>
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  textShadow: "none",
+                  fontWeight: "bold",
+                  padding: "0 15px",
+                }}
+              >
+                If you dont know what to play, just ask the Crystal Ball.
+              </p>{" "}
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#505050",
+                  marginTop: "20px",
+                }}
+              >
+                Click the Ball. Get your lucky Ticket.
+              </p>
+            </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "10px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Image
-              src="/newballc.png"
-              width={100}
-              height={100}
-              onClick={triplef}
-              alt="menulogo"
-            />
-            {/* <img
-            onClick={triplef}
-            style={{
-              width: "100px",
-              height: "100px",
-              borderRadius: "50%",
-              objectFit: "cover",
-              cursor: "pointer",
-              WebkitTapHighlightColor: "transparent",
-            }}
-            src={classicBall}
-            alt="glassBall"
-          ></img> */}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              marginLeft: "10px",
-            }}
-          >
-            <Image
-              src="/newballb.png"
-              width={100}
-              height={100}
-              onClick={tripleBtts}
-              alt="menulogo"
-            />
-            {/* <img
-            onClick={tripleBtts}
-            style={{
-              width: "100px",
-              height: "100px",
-              borderRadius: "50%",
-              objectFit: "cover",
-              cursor: "pointer",
-              WebkitTapHighlightColor: "transparent",
-            }}
-            src={bttsBall}
-            alt="glassBall"
-          ></img> */}
-          </div>
-        </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginBottom: "10px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <Image
+                  src="/newballc.png"
+                  width={100}
+                  height={100}
+                  onClick={triplef}
+                  alt="menulogo"
+                />
+                {/* <img
+        onClick={triplef}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "50%",
+          objectFit: "cover",
+          cursor: "pointer",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        src={classicBall}
+        alt="glassBall"
+      ></img> */}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  marginLeft: "10px",
+                }}
+              >
+                <Image
+                  src="/newballb.png"
+                  width={100}
+                  height={100}
+                  onClick={tripleBtts}
+                  alt="menulogo"
+                />
+                {/* <img
+        onClick={tripleBtts}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "50%",
+          objectFit: "cover",
+          cursor: "pointer",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        src={bttsBall}
+        alt="glassBall"
+      ></img> */}
+              </div>
+            </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {localData &&
-          localData.length > 0 &&
-          localData.length > 2 &&
-          showDiv ? (
-            <>
-              {triple.map((element, index) => (
-                <div className={crystalStyles.ticket} key={index}>
-                  <div className={crystalStyles.dateMain}>
-                    {" "}
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "left",
-                      }}
-                    >
-                      {element.competition_cluster === "Champions League" ? (
-                        <FontAwesomeIcon icon={faFutbol} size="2x" />
-                      ) : element.competition_cluster === "Europa League" ? (
-                        <FontAwesomeIcon icon={faTrophy} size="2x" />
-                      ) : (
-                        <div
-                          style={{ width: "1.2rem", height: "1rem" }}
-                          className={`fi fi-${getCountryCode(
-                            element.competition_cluster
-                          )}`}
-                        ></div>
-                      )}
-                      &nbsp;&nbsp;&nbsp;
-                      <div
-                        className={crystalStyles.date}
-                        style={{ fontSize: "1.1em" }}
-                      >
-                        {element.competition_cluster} -{" "}
-                        {element.competition_name}{" "}
-                      </div>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;
-                    <div
-                      className={crystalStyles.date}
-                      style={{
-                        fontSize: "1.1em",
-                        display: "flex",
-                        justifyContent: "right",
-                      }}
-                    >
-                      {" "}
-                      {`${
-                        zone !== ""
-                          ? convertTZ(element.start_date + "+0000", zone)
-                          : null
-                      }`}{" "}
-                    </div>
-                  </div>
-
-                  <div className={crystalStyles.rightData}>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "left",
-                        width: "84%",
-                      }}
-                    >
-                      <p
-                        className={crystalStyles.federation}
-                        style={{ margin: "0" }}
-                      >
-                        {element.home_team}
-                      </p>
-                      <p
-                        className={crystalStyles.federation}
-                        style={{ fontSize: "0.6rem", margin: "0" }}
-                      >
-                        vs
-                      </p>
-                      <p
-                        className={crystalStyles.federation}
-                        style={{ margin: "0" }}
-                      >
-                        {element.away_team}
-                      </p>
-                    </div>
-                    <div className={crystalStyles.leftData}>
-                      <div className={crystalStyles.odds}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {localData &&
+              localData.length > 0 &&
+              localData.length > 2 &&
+              showDiv ? (
+                <>
+                  {triple.map((element, index) => (
+                    <div className={crystalStyles.ticket} key={index}>
+                      <div className={crystalStyles.dateMain}>
                         {" "}
-                        {element.market.toUpperCase()}{" "}
-                        <div className={crystalStyles.odds}>
-                          <b>{element.prediction.toUpperCase()}</b>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "left",
+                          }}
+                        >
+                          {element.competition_cluster ===
+                          "Champions League" ? (
+                            <FontAwesomeIcon icon={faFutbol} size="2x" />
+                          ) : element.competition_cluster ===
+                            "Europa League" ? (
+                            <FontAwesomeIcon icon={faTrophy} size="2x" />
+                          ) : (
+                            <div
+                              style={{ width: "1.2rem", height: "1rem" }}
+                              className={`fi fi-${getCountryCode(
+                                element.competition_cluster
+                              )}`}
+                            ></div>
+                          )}
+                          &nbsp;&nbsp;&nbsp;
+                          <div
+                            className={crystalStyles.date}
+                            style={{ fontSize: "1.1em" }}
+                          >
+                            {element.competition_cluster} -{" "}
+                            {element.competition_name}{" "}
+                          </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div
+                          className={crystalStyles.date}
+                          style={{
+                            fontSize: "1.1em",
+                            display: "flex",
+                            justifyContent: "right",
+                          }}
+                        >
+                          {" "}
+                          {`${
+                            zone !== ""
+                              ? convertTZ(element.start_date + "+0000", zone)
+                              : null
+                          }`}{" "}
                         </div>
                       </div>
-                      <div className={crystalStyles.odds}>
-                        {" "}
-                        {element.odds[element.prediction]}
+
+                      <div className={crystalStyles.rightData}>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "left",
+                            width: "84%",
+                          }}
+                        >
+                          <p
+                            className={crystalStyles.federation}
+                            style={{ margin: "0" }}
+                          >
+                            {element.home_team}
+                          </p>
+                          <p
+                            className={crystalStyles.federation}
+                            style={{ fontSize: "0.6rem", margin: "0" }}
+                          >
+                            vs
+                          </p>
+                          <p
+                            className={crystalStyles.federation}
+                            style={{ margin: "0" }}
+                          >
+                            {element.away_team}
+                          </p>
+                        </div>
+                        <div className={crystalStyles.leftData}>
+                          <div className={crystalStyles.odds}>
+                            {" "}
+                            {element.market.toUpperCase()}{" "}
+                            <div className={crystalStyles.odds}>
+                              <b>{element.prediction.toUpperCase()}</b>
+                            </div>
+                          </div>
+                          <div className={crystalStyles.odds}>
+                            {" "}
+                            {element.odds[element.prediction]}
+                          </div>
+                        </div>
                       </div>
                     </div>
+                  ))}
+                </>
+              ) : (
+                <p>{msg}</p>
+              )}
+              {accumulator !== 0 ? (
+                <>
+                  <div className={crystalStyles.ticket}>
+                    <p
+                      style={{
+                        textShadow: "0.03em 0.03em #505050",
+                        color: "#505050",
+                        textAlign: "center",
+                      }}
+                    >
+                      -- Total Odds -- <br />{" "}
+                      <span
+                        style={{
+                          textShadow: "0.03em 0.03em",
+                          color: "#505050",
+                          fontSize: "1.3em",
+                          fontWeight: "bold",
+                          fontFamily: "Roboto",
+                        }}
+                      >
+                        {accumulator.toFixed(2)}{" "}
+                      </span>
+                    </p>
                   </div>
-                </div>
-              ))}
-            </>
-          ) : (
-            <p>{msg}</p>
-          )}
-          {accumulator !== 0 ? (
-            <>
-              <div className={crystalStyles.ticket}>
-                <p
-                  style={{
-                    textShadow: "0.03em 0.03em #505050",
-                    color: "#505050",
-                    textAlign: "center",
-                  }}
-                >
-                  -- Total Odds -- <br />{" "}
-                  <span
-                    style={{
-                      textShadow: "0.03em 0.03em",
-                      color: "#505050",
-                      fontSize: "1.3em",
-                      fontWeight: "bold",
-                      fontFamily: "Roboto",
-                    }}
-                  >
-                    {accumulator.toFixed(2)}{" "}
-                  </span>
-                </p>
-              </div>
-              <br />
-              <p style={{ fontSize: "0.7rem" }}>MatchPredictor.net</p>
-              <p style={{ fontSize: "0.6rem" }}>
-                *responsible betting. not financial advice
+                  <br />
+                  <p style={{ fontSize: "0.7rem" }}>MatchPredictor.net</p>
+                  <p style={{ fontSize: "0.6rem" }}>
+                    *responsible betting. not financial advice
+                  </p>
+                </>
+              ) : null}
+            </div>
+            {!showDiv ? (
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#505050",
+                  marginTop: "20px",
+                  lineHeight: "2em",
+                  padding: "0 15px",
+                  textAlign: "center",
+                }}
+              >
+                A Treble bet is where you take three single outright selections,
+                often known as legs, <br /> that are combined into one multiple
+                bet. <br />
+                <br />
+                Classic Treble bet is with 1, X, 2, 12, 1X, 2X options. <br />
+                <br />
+                BTTS is Both teams to score Treble bet.
               </p>
-            </>
-          ) : null}
+            ) : null}
+          </div>
+          <Footer />
+        </>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100vh",
+          }}
+        >
+          <div className={crystalStyles.ldsspinner}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
-        {!showDiv ? (
-          <p
-            style={{
-              fontSize: "0.9rem",
-              color: "#505050",
-              marginTop: "20px",
-              lineHeight: "2em",
-              padding: "0 15px",
-              textAlign: "center",
-            }}
-          >
-            A Treble bet is where you take three single outright selections,
-            often known as legs, <br /> that are combined into one multiple bet.{" "}
-            <br />
-            <br />
-            Classic Treble bet is with 1, X, 2, 12, 1X, 2X options. <br />
-            <br />
-            BTTS is Both teams to score Treble bet.
-          </p>
-        ) : null}
-      </div>
-      <Footer />
+      )}
     </>
   );
 };
