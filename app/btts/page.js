@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import axios from "axios";
 import bttsStyles from "./Btts.module.css";
-import DisplayBubbles from "../components/DisplayBubbles";
+import BttsBubble from "../components/BttsBubble";
 const Btts = () => {
   const [btts, setBtts] = useState();
 
@@ -63,7 +63,7 @@ const Btts = () => {
             Both Teams To Score
           </h5>
         </div>
-        <DisplayBubbles data={btts} type="Btts" />
+        <BttsBubble data={btts} type="Btts" />
       </div>
     </>
   );

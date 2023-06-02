@@ -12,6 +12,9 @@ export const metadata = {
     "Football Predictions Match Predictor Simple and free football soccer match predictions app. Pick up odds for your bets .",
   manifest: "/manifest.json",
   themeColor: "#ffffff",
+  stylesheet: [
+    "https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css",
+  ],
 };
 
 export default function RootLayout({ children }) {
