@@ -13,10 +13,11 @@ export default function Menu(props) {
       <nav className={styles.nav}>
         <div className={styles.navbar}>
           <div className={styles[("container", "nav-container")]}>
+            <label htmlFor="check" style={{ display: "none" }}></label>
             <input
               className={styles.checkbox}
               type="checkbox"
-              name=""
+              name="check"
               id=""
               checked={check}
               onClick={() => handleChange()}
@@ -46,41 +47,43 @@ export default function Menu(props) {
             </div>
             <div className={styles["menu-items"]}>
               <>
-                <li>
-                  <Link href="/" onClick={() => handleChange()}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/predictions" onClick={() => handleChange()}>
-                    Predictions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/crystal-ball" onClick={() => handleChange()}>
-                    Crystal Ball
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" onClick={() => handleChange()}>
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" onClick={() => handleChange()}>
-                    Terms of Use
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy" onClick={() => handleChange()}>
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contacts" onClick={() => handleChange()}>
-                    Contacts
-                  </Link>
-                </li>
+                <ul>
+                  <li>
+                    <Link href="/" onClick={() => handleChange()}>
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/predictions" onClick={() => handleChange()}>
+                      Predictions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/crystal-ball" onClick={() => handleChange()}>
+                      Crystal Ball
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about" onClick={() => handleChange()}>
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/terms" onClick={() => handleChange()}>
+                      Terms of Use
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/privacy" onClick={() => handleChange()}>
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contacts" onClick={() => handleChange()}>
+                      Contacts
+                    </Link>
+                  </li>
+                </ul>
               </>
             </div>
           </div>
