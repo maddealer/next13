@@ -4,6 +4,8 @@ import Menu from "../components/Menu";
 import axios from "axios";
 import bttsStyles from "./Btts.module.css";
 import BttsBubble from "../components/BttsBubble";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 const Btts = () => {
   const [btts, setBtts] = useState();
 
