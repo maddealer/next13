@@ -5,6 +5,7 @@ import axios from "axios";
 import bttsStyles from "./Btts.module.css";
 import BttsBubble from "../components/BttsBubble";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Footer from "../components/Footer";
 
 const Btts = () => {
   const [btts, setBtts] = useState();
@@ -67,6 +68,7 @@ const Btts = () => {
         </div>
         <BttsBubble data={btts} type="Btts" />
       </div>
+      <Footer />
     </>
   );
 };
