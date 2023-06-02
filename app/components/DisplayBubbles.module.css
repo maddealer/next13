@@ -19,6 +19,7 @@
     justify-content: center;
     /* flex-wrap: wrap; */
     font-size: 0.6rem;
+    align-items: center;
     }
     .rightData{
         display: flex;

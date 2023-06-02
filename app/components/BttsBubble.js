@@ -132,7 +132,7 @@ const DisplayBubbles = (props) => {
             style={{
               backgroundColor: `${sortedBubbleColor(typeSort, "yes")}`,
               border: "none",
-              width: "50px",
+              width: "60px",
             }}
           >
             {props.type === "U/O 2.5" ? "Over" : "Yes"}
@@ -143,7 +143,7 @@ const DisplayBubbles = (props) => {
             style={{
               backgroundColor: `${sortedBubbleColor(typeSort, "no")}`,
               border: "none",
-              width: "50px",
+              width: "60px",
             }}
           >
             {props.type === "U/O 2.5" ? "Under" : "No"}
