@@ -1,6 +1,16 @@
+"use client";
 import footerStyles from "./Footer.module.css";
 import Link from "next/link";
-
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+} from "next-share";
 // import {
 //   FacebookShareButton,
 //   TelegramShareButton,
@@ -94,8 +104,33 @@ const Footer = () => {
         {" "}
         You can share on
       </div>
-      {/* <div className={footerStyles.container1}>
+      <div className={footerStyles.container1} style={{ gap: "10px" }}>
         <FacebookShareButton
+          url={"https://matchpredictor.net"}
+          quote={"Free & Simple Football Match Predictions app."}
+          hashtag={"#football"}
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+        <FacebookMessengerShareButton
+          url={"https://matchpredictor.net"}
+          appId={""}
+        >
+          <FacebookMessengerIcon size={32} round />
+        </FacebookMessengerShareButton>
+        <TelegramShareButton
+          url={"https://matchpredictor.net"}
+          title={"Free & Simple Football Match Predictions app."}
+        >
+          <TelegramIcon size={32} round />
+        </TelegramShareButton>
+        <TwitterShareButton
+          url={"https://matchpredictor.net"}
+          title={"Free & Simple Football Match Predictions app."}
+        >
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+        {/* <FacebookShareButton
           url={"https://matchpredictor.net"}
           quote={"Free & Simple Football Match Predictor"}
           hashtag={"#football"}
@@ -130,8 +165,8 @@ const Footer = () => {
           title={"Free & Simple Football Match Predictor"}
         >
           <TelegramIcon size={32} round></TelegramIcon>
-        </TelegramShareButton>
-      </div> */}
+        </TelegramShareButton> */}
+      </div>
       <div
         className={footerStyles.container2}
         style={{

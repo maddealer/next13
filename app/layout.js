@@ -15,6 +15,27 @@ export const metadata = {
   stylesheet: [
     "https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css",
   ],
+  openGraph: {
+    title: "Match Predictor",
+    description: "Free & Simple Football Match Predictions app.",
+    url: "https://matchpredictor.net",
+    siteName: "Match Predictor",
+    images: [
+      {
+        url: "/facebookOG.png",
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: "/twitterOG.png",
+        width: 500,
+        height: 500,
+        alt: "My custom alt",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
