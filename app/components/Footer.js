@@ -127,6 +127,7 @@ const Footer = () => {
         <TwitterShareButton
           url={"https://matchpredictor.net"}
           title={"Free & Simple Football Match Predictions app."}
+          blankTarget="true"
         >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
