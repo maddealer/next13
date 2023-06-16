@@ -23,6 +23,7 @@ import Menu from "../../components/Menu";
 import { getCountryCode } from "../../../utils/getCountryCode";
 import Footer from "@/app/components/Footer";
 import "../../global.css";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default function Details({ params }) {
   const routeParams = params.details;
