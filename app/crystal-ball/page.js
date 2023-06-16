@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import "../global.css";
 
 import { data } from "../../redux/predictionsSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

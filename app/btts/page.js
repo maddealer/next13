@@ -6,6 +6,7 @@ import bttsStyles from "./Btts.module.css";
 import BttsBubble from "../components/BttsBubble";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Footer from "../components/Footer";
+import "../global.css";
 
 const Btts = () => {
   const [btts, setBtts] = useState();

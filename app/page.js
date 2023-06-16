@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
+import CookieConsent from "./components/Cookies";
 // import Menu from "../Menu";
 
 const Main = () => {
@@ -118,14 +119,15 @@ const Main = () => {
         </div>
 
         {/* <CookieConsent
-      style={{
-        background: "rgba(60, 60, 60, 0.9)",
-        textShadow: "2px 2px black",
-        fontSize: "0.8em",
-      }}
-    >
-      This website uses cookies to enhance the user experience.
-    </CookieConsent> */}
+          style={{
+            background: "rgba(60, 60, 60, 0.9)",
+            textShadow: "2px 2px black",
+            fontSize: "0.8em",
+          }}
+        >
+          This website uses cookies to enhance the user experience.
+        </CookieConsent> */}
+        <CookieConsent />
       </div>
       <Footer />
     </>

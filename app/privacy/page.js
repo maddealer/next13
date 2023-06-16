@@ -1,6 +1,8 @@
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import policyStyles from "../terms/Terms.module.css";
+import "../global.css";
+
 const Privacy = () => {
   return (
     <>

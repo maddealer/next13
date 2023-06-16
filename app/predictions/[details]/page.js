@@ -22,6 +22,8 @@ import bubbleStyles from "../../components/PredictionsBubble.module.css";
 import Menu from "../../components/Menu";
 import { getCountryCode } from "../../../utils/getCountryCode";
 import Footer from "@/app/components/Footer";
+import "../global.css";
+
 export default function Details({ params }) {
   const routeParams = params.details;
   const [data, setData] = useState();

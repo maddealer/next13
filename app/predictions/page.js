@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 // import { getCountryCode } from "../utils/getCountryCode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../global.css";
+
 import {
   faArrowUp,
   faFutbolBall,

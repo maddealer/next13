@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import aboutStyles from "./About.module.css";
 import Image from "next/image";
+import "../global.css";
 
 const About = () => {
   return (
