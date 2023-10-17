@@ -32,7 +32,7 @@ const Main = () => {
                   className={mainStyles.maintitle}
                   style={{ fontWeight: "normal" }}
                 >
-                  Match Predictor Test
+                  Match Predictor
                 </h1>
                 <p className={mainStyles.mainp} style={{ marginTop: "20px" }}>
                   Is a Free & Simple Football Predictions App
