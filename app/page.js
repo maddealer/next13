@@ -8,15 +8,150 @@ import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import CookieConsent from "./components/Cookies";
 // import Menu from "../Menu";
-
+import localFont from "next/font/local";
+const dayseOne = localFont({ src: "../fonts/DaysOne-Regular.ttf" });
+const linksTo = localFont({ src: "../fonts/Inter-VariableFont_slnt,wght.ttf" });
 const Main = () => {
   return (
     <>
       <div className={mainStyles.main}>
         <div className={mainStyles.box}>
-          <div style={{ height: "100vh" }}>
+          <div style={{ height: "100vh", width: "100%", maxWidth: "860px" }}>
             <Menu />
-            <div className={mainStyles.text}>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "15px 15px",
+              }}
+            >
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="btts"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={linksTo.style}>BTTS</span>
+                </Link>
+              </div>
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="predictions"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={linksTo.style}>Predictions</span>
+                </Link>
+              </div>
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="over25"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={linksTo.style}>U/O 2.5</span>
+                </Link>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <p
+                style={{
+                  color: "#4f8230",
+                  fontSize: "2rem",
+                  marginBottom: "0",
+                }}
+              >
+                <span span style={dayseOne.style}>
+                  Free and Simple
+                </span>{" "}
+              </p>
+              <p style={{ color: "#4f8230", fontSize: "2rem", marginTop: "0" }}>
+                <span span style={dayseOne.style}>
+                  Prediction Tool
+                </span>
+              </p>{" "}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "50px",
+              }}
+            >
+              <Link href="crystal-ball">
+                <Image
+                  src="/goldball.png"
+                  width={200}
+                  height={200}
+                  alt="menulogo"
+                />
+              </Link>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                marginTop: "0",
+                padding: "0 20px",
+                color: "#cfcccc",
+              }}
+            >
+              <p
+                style={{
+                  marginTop: "0",
+                  marginBottom: "5px",
+                  color: "#b8b8b8",
+                }}
+              >
+                DISCLAIMER
+              </p>
+              <p
+                style={{
+                  marginTop: "0",
+                }}
+              >
+                Based on AI, Poisson probabilities and mathematical calculations{" "}
+              </p>
+            </div>
+            {/* <div className={mainStyles.text}>
               <div
                 style={{
                   display: "flex",
@@ -32,7 +167,7 @@ const Main = () => {
                   className={mainStyles.maintitle}
                   style={{ fontWeight: "normal" }}
                 >
-                  Match Predictor
+                  <span style={dayseOne.style}> Match Predictor</span>
                 </h1>
                 <p className={mainStyles.mainp} style={{ marginTop: "20px" }}>
                   Is a Free & Simple Football Predictions App
@@ -83,10 +218,10 @@ const Main = () => {
                   </div>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          <Image
+          {/* <Image
             className={mainStyles.b}
             src="/football.png"
             width={50}
@@ -113,7 +248,7 @@ const Main = () => {
             width={50}
             height={50}
             alt="ball"
-          />
+          /> */}
 
           {/* <div className={mainStyles.circle}></div> */}
         </div>
