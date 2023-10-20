@@ -274,6 +274,32 @@ align-items: center;
   from { bottom: 0; } to { bottom:  calc(100vh - 50px); }
 }
 
+/* ball animation */
+
+.ball {
+  
+  animation-name: grow;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  /* animation-iteration-count: infinite; */
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+    
+  }
+  
+  100% {
+    transform: scale(8);
+    opacity: 0.2;
+    
+  }
+}
+
 /* spinner */
 .ldsspinner {
   color: #4181ee;

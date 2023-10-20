@@ -1,7 +1,7 @@
 import "./global.css";
 import mainStyles from "./page.module.css";
 import Link from "next/link";
-
+import BallMain from "./components/BallMain";
 // import CookieConsent from "react-cookie-consent";
 import Image from "next/image";
 import Menu from "./components/Menu";
@@ -113,14 +113,7 @@ const Main = () => {
                 marginTop: "50px",
               }}
             >
-              <Link href="crystal-ball">
-                <Image
-                  src="/goldball.png"
-                  width={200}
-                  height={200}
-                  alt="menulogo"
-                />
-              </Link>
+              <BallMain />
             </div>
             <div
               style={{
