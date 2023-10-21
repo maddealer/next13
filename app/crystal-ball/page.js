@@ -9,6 +9,9 @@ const dayseOne = localFont({ src: "../../fonts/DaysOne-Regular.ttf" });
 const linksTo = localFont({
   src: "../../fonts/Inter-VariableFont_slnt,wght.ttf",
 });
+const wisdomFont = localFont({
+  src: "../../fonts/DarkerGrotesque-VariableFont_wght.ttf",
+});
 
 import { data } from "../../redux/predictionsSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -102,6 +105,11 @@ const CrystalBall = () => {
     };
     getBtts();
   }, []);
+  useEffect(() => {
+    if (!load1 && !load2) {
+      triplef();
+    }
+  }, [!load1, !load2]);
   const triplef = () => {
     let output = new Set();
     if (localData.length < 3) {
@@ -323,7 +331,7 @@ const CrystalBall = () => {
                 </div>
                 <p
                   style={{
-                    color: "#d78821",
+                    color: "#e28b00",
                     fontSize: "3rem",
                     marginBottom: "0",
                     marginTop: "0",
@@ -335,125 +343,19 @@ const CrystalBall = () => {
                 </p>
                 <p
                   style={{
-                    color: "#d78821",
+                    color: "#e28b00",
                     fontSize: "3rem",
                     marginBottom: "0",
                     marginTop: "-10px",
-                    fontWeight: "100",
-                    letterSpacing: "20px",
-                    paddingLeft: "20px",
+                    fontWeight: "lighter",
+                    letterSpacing: "25px",
+                    paddingLeft: "30px",
                   }}
                 >
-                  <span style={linksTo.style}>WISDOM</span>
+                  <span style={wisdomFont.style}>WISDOM</span>
                 </p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  height: "40px",
-                  margin: "25px 10px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    padding: "10px 20px",
-                    borderRadius: "10px",
-                    boxShadow: "2px 2px 1px #fb9b07",
-                    width: "80px",
-                    textAlign: "center",
-                    backgroundColor: "#c7c6c496",
-                  }}
-                  onClick={triplef}
-                >
-                  {/* <Image
-                        src="/newballc.png"
-                        width={100}
-                        height={100}
-                        onClick={triplef}
-                        alt="menulogo"
-                      /> */}
-                  CLASSIC
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    padding: "10px 20px",
 
-                    width: "80px",
-                    textAlign: "center",
-                  }}
-                >
-                  {accumulator !== 0 ? (
-                    <>
-                      <p
-                        style={{
-                          color: "#d78821",
-                          fontSize: "1.6rem",
-                          marginBottom: "0",
-                          marginTop: "0",
-                        }}
-                      >
-                        <span span style={dayseOne.style}>
-                          {accumulator.toFixed(2)}
-                        </span>
-                      </p>{" "}
-                      <p
-                        style={{
-                          color: "#d78821",
-                          fontSize: "1.1rem",
-                          marginBottom: "0",
-                          marginTop: "-5px",
-                          letterSpacing: "1px",
-                        }}
-                      >
-                        <span style={linksTo.style}>ODDS</span>
-                      </p>
-                    </>
-                  ) : null}
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    padding: "10px 20px",
-                    borderRadius: "10px",
-                    boxShadow: "2px 2px 1px #fb9b07",
-                    width: "80px",
-                    textAlign: "center",
-                    backgroundColor: "#c7c6c496",
-                  }}
-                  onClick={tripleBtts}
-                >
-                  {/* <Image
-                        src="/newballb.png"
-                        width={100}
-                        height={100}
-                        onClick={tripleBtts}
-                        alt="menulogo"
-                      /> */}
-                  BTTS
-                  {/* <img
-        onClick={tripleBtts}
-        style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "50%",
-          objectFit: "cover",
-          cursor: "pointer",
-          WebkitTapHighlightColor: "transparent",
-        }}
-        src={bttsBall}
-        alt="glassBall"
-      ></img> */}
-                </div>
-              </div>{" "}
               {!load1 && !load2 ? (
                 <>
                   <div
@@ -462,6 +364,7 @@ const CrystalBall = () => {
                       flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
+                      marginTop: "10px",
                     }}
                   >
                     {localData &&
@@ -567,6 +470,114 @@ const CrystalBall = () => {
                             </div>
                           </div>
                         ))}
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            height: "40px",
+                            margin: "25px 10px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
+                              padding: "10px 20px",
+                              borderRadius: "10px",
+                              boxShadow: "2px 2px 1px #fb9b07",
+                              width: "80px",
+                              textAlign: "center",
+                              backgroundColor: "#c7c6c496",
+                            }}
+                            onClick={triplef}
+                          >
+                            {/* <Image
+                        src="/newballc.png"
+                        width={100}
+                        height={100}
+                        onClick={triplef}
+                        alt="menulogo"
+                      /> */}
+                            <span style={linksTo.style}>CLASSIC</span>
+                          </div>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
+                              padding: "10px 20px",
+
+                              width: "80px",
+                              textAlign: "center",
+                            }}
+                          >
+                            {accumulator !== 0 ? (
+                              <>
+                                <p
+                                  style={{
+                                    color: "#e28b00",
+                                    fontSize: "1.7rem",
+                                    marginBottom: "0",
+                                    marginTop: "0",
+                                  }}
+                                >
+                                  <span span style={dayseOne.style}>
+                                    {accumulator.toFixed(2)}
+                                  </span>
+                                </p>{" "}
+                                <p
+                                  style={{
+                                    color: "#e28b00",
+                                    fontSize: "1.3rem",
+                                    marginBottom: "0",
+                                    marginTop: "-8px",
+                                    letterSpacing: "1px",
+                                  }}
+                                >
+                                  <span style={linksTo.style}>ODDS</span>
+                                </p>
+                              </>
+                            ) : null}
+                          </div>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
+                              padding: "10px 20px",
+                              borderRadius: "10px",
+                              boxShadow: "2px 2px 1px #fb9b07",
+                              width: "80px",
+                              textAlign: "center",
+                              backgroundColor: "#c7c6c496",
+                            }}
+                            onClick={tripleBtts}
+                          >
+                            {/* <Image
+                        src="/newballb.png"
+                        width={100}
+                        height={100}
+                        onClick={tripleBtts}
+                        alt="menulogo"
+                      /> */}
+                            <span style={linksTo.style}>BTTS</span>
+                            {/* <img
+        onClick={tripleBtts}
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "50%",
+          objectFit: "cover",
+          cursor: "pointer",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        src={bttsBall}
+        alt="glassBall"
+      ></img> */}
+                          </div>
+                        </div>{" "}
                         <br />
                         <div
                           style={{
@@ -578,7 +589,9 @@ const CrystalBall = () => {
                           }}
                         >
                           <p style={{ fontSize: "0.6rem" }}>
-                            *responsible betting. not financial advice
+                            <span style={linksTo.style}>
+                              *responsible betting. not financial advice
+                            </span>
                           </p>
                         </div>
                       </>

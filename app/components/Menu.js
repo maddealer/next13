@@ -48,74 +48,105 @@ export default function Menu(props) {
               <span className={`${styles.line} ${styles.line3}`}></span>
             </div>
 
-            <div className={styles["menu-items"]} style={{ padding: "0" }}>
+            <div
+              className={styles["menu-items"]}
+              style={{ padding: "0", backgroundColor: "#e9e9e9" }}
+            >
               <>
                 <ul
-                  style={{ padding: "0", marginTop: "0", marginBottom: "5px" }}
+                  style={{
+                    padding: "0",
+                    marginTop: "0",
+                    marginBottom: "5px",
+                  }}
                 >
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/"
+                      onClick={() => handleChange()}
+                    >
                       Home
                     </Link>
                   </li>
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/predictions" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/predictions"
+                      onClick={() => handleChange()}
+                    >
                       Predictions
                     </Link>
                   </li>
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/crystal-ball" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/crystal-ball"
+                      onClick={() => handleChange()}
+                    >
                       Crystal Ball
                     </Link>
                   </li>
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/about" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/about"
+                      onClick={() => handleChange()}
+                    >
                       About
                     </Link>
                   </li>
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/terms" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/terms"
+                      onClick={() => handleChange()}
+                    >
                       Terms of Use
                     </Link>
                   </li>
                   <li
                     style={{
-                      borderBottom: "1px solid black",
+                      borderBottom: "1px solid #bfbfbf",
                       padding: "5px 0",
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/privacy" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/privacy"
+                      onClick={() => handleChange()}
+                    >
                       Privacy Policy
                     </Link>
                   </li>
@@ -125,7 +156,11 @@ export default function Menu(props) {
                       marginBottom: "0",
                     }}
                   >
-                    <Link href="/contacts" onClick={() => handleChange()}>
+                    <Link
+                      style={{ color: "#999898" }}
+                      href="/contacts"
+                      onClick={() => handleChange()}
+                    >
                       Contacts
                     </Link>
                   </li>
