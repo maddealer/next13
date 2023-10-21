@@ -33,16 +33,18 @@ const BallMain = (props) => {
   return (
     <div>
       {/* className={isActive ? 'bg-salmon' : ''} onClick={handleClick} */}
-      {/* <Link href="crystal-ball"> */}
-      <Image
-        src="/goldball.png"
-        width={200}
-        height={200}
-        alt="menulogo"
-        className={isActive ? mainStyles["ball"] : ""}
-        onClick={handleClick}
-      />
-      {/* </Link> */}
+      <Link href="crystal-ball">
+        <Image
+          src="/goldball.png"
+          width={200}
+          height={200}
+          alt="menulogo"
+          // className={isActive ? mainStyles["ball"] : ""}
+          className={mainStyles["ball"]}
+
+          // onClick={handleClick}
+        />
+      </Link>
     </div>
   );
 };

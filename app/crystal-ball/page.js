@@ -217,7 +217,7 @@ const CrystalBall = () => {
             <div
               style={{
                 position: "absolute",
-                top: "50px",
+                top: "45px",
                 width: "100%",
                 maxWidth: "860px",
               }}
@@ -567,6 +567,20 @@ const CrystalBall = () => {
                             </div>
                           </div>
                         ))}
+                        <br />
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "100%",
+                            marginTop: "-25px",
+                          }}
+                        >
+                          <p style={{ fontSize: "0.6rem" }}>
+                            *responsible betting. not financial advice
+                          </p>
+                        </div>
                       </>
                     ) : (
                       <p>{msg}</p>
@@ -599,20 +613,6 @@ const CrystalBall = () => {
                     ) : null} */}
                   </div>
 
-                  <br />
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      width: "100%",
-                      marginTop: "-25px",
-                    }}
-                  >
-                    <p style={{ fontSize: "0.6rem" }}>
-                      *responsible betting. not financial advice
-                    </p>
-                  </div>
                   {/* {!showDiv ? (
                     <p
                       style={{

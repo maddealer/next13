@@ -279,11 +279,11 @@ align-items: center;
 .ball {
   
   animation-name: grow;
-  animation-duration: 2s; 
+  animation-duration: 1.5s; 
   animation-timing-function: ease-out; 
   animation-delay: 0;
   animation-direction: alternate;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-play-state: running;
 }
@@ -294,8 +294,8 @@ align-items: center;
   }
   
   100% {
-    transform: scale(8);
-    opacity: 0.2;
+    transform: scale(1.5);
+    opacity: 0.4;
     
   }
 }
