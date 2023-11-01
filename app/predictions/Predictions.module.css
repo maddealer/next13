@@ -36,7 +36,7 @@
      flex-wrap: wrap;
      max-width: 960px;
      margin: 0 auto;
-     height: 90vh;
+     min-height: 90vh;
      margin-top: 50px;
 }
  .card{
