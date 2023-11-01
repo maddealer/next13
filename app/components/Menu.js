@@ -19,12 +19,25 @@ export default function Menu(props) {
             href="/"
             style={{ padding: "0", marginLeft: "10px", color: "#ffffff" }}
           >
-            <FontAwesomeIcon icon={faHome} size="xl" />
+            <Image
+              src="/Home.png"
+              width={30}
+              height={30}
+              alt="menulogo"
+              style={{ color: "#ffffff" }}
+              // className={isActive ? mainStyles["ball"] : ""}
+
+              // onClick={handleClick}
+            />
+            {/* <FontAwesomeIcon icon={faHome} size="xl" /> */}
           </Link>
-          <span style={dayseOne.style} className={styles.title}>
+          <Link href="/" style={{ padding: "0", textDecoration: "none" }}>
             {" "}
-            Match Predictor
-          </span>
+            <span style={dayseOne.style} className={styles.title}>
+              {" "}
+              Match Predictor
+            </span>
+          </Link>
           <div
             className={styles[("container", "nav-container")]}
             style={{ width: "30px" }}

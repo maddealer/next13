@@ -44,7 +44,7 @@ const PredictionsBubble = (props) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
         marginTop: "20px",
         width: "100%",
