@@ -90,6 +90,7 @@ const DisplayBubbles = (props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        minHeight: "10",
       }}
     >
       <div
@@ -98,9 +99,10 @@ const DisplayBubbles = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "20px",
+          marginTop: "5px",
           width: "100%",
           maxWidth: "500px",
+          minHeight: "90vh",
         }}
       >
         {bttsData && bttsData.length > 0 ? (
@@ -110,7 +112,6 @@ const DisplayBubbles = (props) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              gap: "10px",
             }}
           >
             {/* <p style={{ fontSize: "0.8em", marginRight: "10px" }}>Sort By</p> */}
@@ -121,9 +122,10 @@ const DisplayBubbles = (props) => {
               style={{
                 backgroundColor: `${sortedBubbleColor(typeSort, "country")}`,
                 border: "none",
+                color: `${typeSort === "country" ? "#ffffff" : "#000000"}`,
               }}
             >
-              Country
+              COUNTRY
             </button>
             <button
               className={bubbleStyles.button4}
@@ -131,9 +133,10 @@ const DisplayBubbles = (props) => {
               style={{
                 backgroundColor: `${sortedBubbleColor(typeSort, "start")}`,
                 border: "none",
+                color: `${typeSort === "start" ? "#ffffff" : "#000000"}`,
               }}
             >
-              Start Time
+              START TIME
             </button>
 
             <button
@@ -142,10 +145,11 @@ const DisplayBubbles = (props) => {
               style={{
                 backgroundColor: `${sortedBubbleColor(typeSort, "yes")}`,
                 border: "none",
-                width: "60px",
+
+                color: `${typeSort === "yes" ? "#ffffff" : "#000000"}`,
               }}
             >
-              {props.type === "U/O 2.5" ? "Over" : "Yes"}
+              {props.type === "U/O 2.5" ? "OVER" : "YES"}
             </button>
             <button
               className={bubbleStyles.button4}
@@ -153,10 +157,11 @@ const DisplayBubbles = (props) => {
               style={{
                 backgroundColor: `${sortedBubbleColor(typeSort, "no")}`,
                 border: "none",
-                width: "60px",
+
+                color: `${typeSort === "no" ? "#ffffff" : "#000000"}`,
               }}
             >
-              {props.type === "U/O 2.5" ? "Under" : "No"}
+              {props.type === "U/O 2.5" ? "UNDER" : "NO"}
             </button>
           </div>
         ) : null}

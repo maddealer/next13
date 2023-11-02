@@ -5,5 +5,5 @@ export const leagueBtnColor = (league, localData) => {
   return league === localData ? "#94b0a0" : "#d5d5d5";
 };
 export const sortedBubbleColor = (sort, localData) => {
-  return sort === localData ? "#c7c7c7" : "#f3f3f3";
+  return sort === localData ? "#94b0a0" : "#d5d5d5";
 };

@@ -96,9 +96,7 @@ const Main = () => {
                   marginBottom: "0",
                 }}
               >
-                <span span style={dayseOne.style}>
-                  Free and Simple
-                </span>{" "}
+                <span style={dayseOne.style}>Free and Simple</span>{" "}
               </p>
               <p style={{ color: "#4f8230", fontSize: "2rem", marginTop: "0" }}>
                 <span span style={dayseOne.style}>

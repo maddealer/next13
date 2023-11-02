@@ -7,6 +7,13 @@ import BttsBubble from "../components/BttsBubble";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Footer from "../components/Footer";
 import "../global.css";
+import Link from "next/link";
+import localFont from "next/font/local";
+// const dayseOne = localFont({ src: "../fonts/DaysOne-Regular.ttf" });
+const interFont = localFont({
+  src: "../../fonts/Inter-VariableFont_slnt,wght.ttf",
+});
+const dayseOne = localFont({ src: "../../fonts/DaysOne-Regular.ttf" });
 
 const Btts = () => {
   const [btts, setBtts] = useState();
@@ -59,14 +66,82 @@ const Btts = () => {
             <div
               style={{
                 display: "flex",
+                justifyContent: "space-between",
+                padding: "15px 15px",
+                paddingBottom: "5px",
+              }}
+            >
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="btts"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={interFont.style}>BTTS</span>
+                </Link>
+              </div>
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="predictions"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={interFont.style}>Predictions</span>
+                </Link>
+              </div>
+              <div
+                style={{
+                  height: "30px",
+                  width: "105px",
+                  borderBottom: "1px solid #ff7a00",
+                  textAlign: "center",
+                }}
+              >
+                <Link
+                  href="over25"
+                  style={{
+                    textDecoration: "none",
+                    color: "#000000",
+                  }}
+                >
+                  <span style={interFont.style}>U/O 2.5</span>
+                </Link>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
                 width: "100%",
               }}
             >
-              <h5 className={bttsStyles.header} style={{ marginBottom: "0" }}>
-                Both Teams To Score
+              <h5
+                className={bttsStyles.header}
+                style={{ marginBottom: "0", color: "#4f8230" }}
+              >
+                <span span style={dayseOne.style}>
+                  Both Teams To Score
+                </span>
               </h5>
             </div>
             <BttsBubble data={btts} type="Btts" />
