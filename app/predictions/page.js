@@ -9,7 +9,11 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../global.css";
 import crystalStyles from "../crystal-ball/CrystalBall.module.css";
-
+import localFont from "next/font/local";
+// const dayseOne = localFont({ src: "../fonts/DaysOne-Regular.ttf" });
+const interFont = localFont({
+  src: "../../fonts/Inter-VariableFont_slnt,wght.ttf",
+});
 import {
   faArrowUp,
   faFutbolBall,
@@ -278,7 +282,7 @@ function Predictions() {
                         }`,
                       }}
                     >
-                      CONCACAF
+                      <span style={interFont.style}>CONCACAF</span>
                     </button>
                     <button
                       className={predictionsClasses.button4}
@@ -300,7 +304,7 @@ function Predictions() {
                         }`,
                       }}
                     >
-                      CONMEBOL
+                      <span style={interFont.style}>CONMEBOL</span>
                     </button>
                   </div>
                 </div>
@@ -344,7 +348,7 @@ function Predictions() {
                         }`,
                       }}
                     >
-                      AFC
+                      <span style={interFont.style}>AFC</span>
                     </button>
                     <button
                       className={predictionsClasses.button4}
@@ -365,7 +369,7 @@ function Predictions() {
                         }`,
                       }}
                     >
-                      UEFA
+                      <span style={interFont.style}>UEFA</span>
                     </button>
                     <button
                       className={predictionsClasses.button4}
@@ -387,7 +391,7 @@ function Predictions() {
                         }`,
                       }}
                     >
-                      CAF
+                      <span style={interFont.style}>CAF</span>
                     </button>
                   </div>
                 </div>
@@ -405,134 +409,191 @@ function Predictions() {
                 Object.keys(dataLoadet).length !== 0 ? (
                   <div
                     style={{
-                      marginBottom: "10px",
-                      marginTop: "20px",
+                      marginBottom: "0px",
+                      marginTop: "0px",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       flexWrap: "wrap",
                     }}
                   >
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Premier League"));
-
-                        // setLeague("Premier League");
-                      }}
+                    <div
                       style={{
-                        color: "#3c3c3c",
-
-                        backgroundColor: `${leagueBtnColor(
-                          league,
-                          "Premier League"
-                        )}`,
+                        marginBottom: "0px",
+                        marginTop: "0px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexWrap: "wrap",
+                        width: "100%",
+                        maxWidth: "500px",
                       }}
                     >
-                      Premier League
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Serie A"));
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Premier League"));
 
-                        // setLeague("Serie A");
-                      }}
+                          // setLeague("Premier League");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
+
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Premier League"
+                          )}`,
+                          color: `${
+                            league === "Premier League" ? "#ffffff" : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Premier League</span>
+                      </button>
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Serie A"));
+
+                          // setLeague("Serie A");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
+
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Serie A"
+                          )}`,
+                          color: `${
+                            league === "Serie A" ? "#ffffff" : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Serie A</span>
+                      </button>
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Primera Division"));
+
+                          // setLeague("Primera Division");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
+
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Primera Division"
+                          )}`,
+                          color: `${
+                            league === "Primera Division"
+                              ? "#ffffff"
+                              : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Primera Division</span>
+                      </button>
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Ligue 1"));
+
+                          // setLeague("Ligue 1");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
+
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Ligue 1"
+                          )}`,
+                          color: `${
+                            league === "Ligue 1" ? "#ffffff" : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Ligue 1</span>
+                      </button>
+                    </div>
+                    <div
                       style={{
-                        color: "#3c3c3c",
-
-                        backgroundColor: `${leagueBtnColor(league, "Serie A")}`,
+                        marginBottom: "0px",
+                        marginTop: "0px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        flexWrap: "wrap",
+                        width: "100%",
+                        maxWidth: "500px",
                       }}
                     >
-                      Serie A
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Primera Division"));
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Bundesliga"));
 
-                        // setLeague("Primera Division");
-                      }}
-                      style={{
-                        color: "#3c3c3c",
+                          // setLeague("Bundesliga");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
 
-                        backgroundColor: `${leagueBtnColor(
-                          league,
-                          "Primera Division"
-                        )}`,
-                      }}
-                    >
-                      Primera Division
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Ligue 1"));
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Bundesliga"
+                          )}`,
+                          color: `${
+                            league === "Bundesliga" ? "#ffffff" : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Bundesliga</span>
+                      </button>
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Champions League"));
 
-                        // setLeague("Ligue 1");
-                      }}
-                      style={{
-                        color: "#3c3c3c",
+                          // setLeague("Champions League");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
 
-                        backgroundColor: `${leagueBtnColor(league, "Ligue 1")}`,
-                      }}
-                    >
-                      Ligue 1
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Bundesliga"));
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Champions League"
+                          )}`,
+                          color: `${
+                            league === "Champions League"
+                              ? "#ffffff"
+                              : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Champions League</span>
+                      </button>
+                      <button
+                        className={predictionsClasses.button5}
+                        onClick={() => {
+                          dispatch(setLeague("Europa League"));
 
-                        // setLeague("Bundesliga");
-                      }}
-                      style={{
-                        color: "#3c3c3c",
+                          // setLeague("Europa League");
+                        }}
+                        style={{
+                          color: "#3c3c3c",
 
-                        backgroundColor: `${leagueBtnColor(
-                          league,
-                          "Bundesliga"
-                        )}`,
-                      }}
-                    >
-                      Bundesliga
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Champions League"));
-
-                        // setLeague("Champions League");
-                      }}
-                      style={{
-                        color: "#3c3c3c",
-
-                        backgroundColor: `${leagueBtnColor(
-                          league,
-                          "Champions League"
-                        )}`,
-                      }}
-                    >
-                      Champions League
-                    </button>
-                    <button
-                      className={predictionsClasses.button5}
-                      onClick={() => {
-                        dispatch(setLeague("Europa League"));
-
-                        // setLeague("Europa League");
-                      }}
-                      style={{
-                        color: "#3c3c3c",
-
-                        backgroundColor: `${leagueBtnColor(
-                          league,
-                          "Europa League"
-                        )}`,
-                      }}
-                    >
-                      Europa League
-                    </button>
+                          backgroundColor: `${leagueBtnColor(
+                            league,
+                            "Europa League"
+                          )}`,
+                          color: `${
+                            league === "Europa League" ? "#ffffff" : "#000000"
+                          }`,
+                        }}
+                      >
+                        <span style={interFont.style}>Europa League</span>
+                      </button>
+                    </div>
                   </div>
                 ) : null}
                 {/* CONCACAF BUTTONS LEAGUES */}
@@ -562,9 +623,14 @@ function Predictions() {
                           league,
                           "Major League Soccer"
                         )}`,
+                        color: `${
+                          league === "Major League Soccer"
+                            ? "#ffffff"
+                            : "#000000"
+                        }`,
                       }}
                     >
-                      MLS
+                      <span style={interFont.style}>MLS</span>
                     </button>
                     <button
                       className={predictionsClasses.button5}
@@ -577,9 +643,12 @@ function Predictions() {
                         color: "#3c3c3c",
 
                         backgroundColor: `${leagueBtnColor(league, "Liga MX")}`,
+                        color: `${
+                          league === "Liga MX" ? "#ffffff" : "#000000"
+                        }`,
                       }}
                     >
-                      Liga MX
+                      <span style={interFont.style}>Liga MX</span>
                     </button>
                     <button
                       className={predictionsClasses.button5}
@@ -595,9 +664,12 @@ function Predictions() {
                           league,
                           "Premier League"
                         )}`,
+                        color: `${
+                          league === "Premier League" ? "#ffffff" : "#000000"
+                        }`,
                       }}
                     >
-                      Canada Premier League
+                      <span style={interFont.style}>Canada Premier League</span>
                     </button>
                   </div>
                 ) : null}
@@ -628,9 +700,12 @@ function Predictions() {
                           league,
                           "Liga Profesional"
                         )}`,
+                        color: `${
+                          league === "Liga Profesional" ? "#ffffff" : "#000000"
+                        }`,
                       }}
                     >
-                      Liga Profesional
+                      <span style={interFont.style}>Liga Profesional</span>
                     </button>
                   </div>
                 ) : null}
