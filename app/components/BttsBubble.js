@@ -86,189 +86,206 @@ const DisplayBubbles = (props) => {
   return (
     <div
       style={{
+        width: "100%",
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: "20px",
       }}
     >
-      {bttsData && bttsData.length > 0 ? (
-        <div
-          style={{
-            marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          {/* <p style={{ fontSize: "0.8em", marginRight: "10px" }}>Sort By</p> */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "20px",
+          width: "100%",
+          maxWidth: "500px",
+        }}
+      >
+        {bttsData && bttsData.length > 0 ? (
+          <div
+            style={{
+              marginBottom: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            {/* <p style={{ fontSize: "0.8em", marginRight: "10px" }}>Sort By</p> */}
 
-          <button
-            className={bubbleStyles.button4}
-            onClick={() => sortCountry()}
-            style={{
-              backgroundColor: `${sortedBubbleColor(typeSort, "country")}`,
-              border: "none",
-            }}
-          >
-            Country
-          </button>
-          <button
-            className={bubbleStyles.button4}
-            onClick={() => sortStart()}
-            style={{
-              backgroundColor: `${sortedBubbleColor(typeSort, "start")}`,
-              border: "none",
-            }}
-          >
-            Start Time
-          </button>
+            <button
+              className={bubbleStyles.button4}
+              onClick={() => sortCountry()}
+              style={{
+                backgroundColor: `${sortedBubbleColor(typeSort, "country")}`,
+                border: "none",
+              }}
+            >
+              Country
+            </button>
+            <button
+              className={bubbleStyles.button4}
+              onClick={() => sortStart()}
+              style={{
+                backgroundColor: `${sortedBubbleColor(typeSort, "start")}`,
+                border: "none",
+              }}
+            >
+              Start Time
+            </button>
 
-          <button
-            className={bubbleStyles.button4}
-            onClick={() => yes()}
-            style={{
-              backgroundColor: `${sortedBubbleColor(typeSort, "yes")}`,
-              border: "none",
-              width: "60px",
-            }}
-          >
-            {props.type === "U/O 2.5" ? "Over" : "Yes"}
-          </button>
-          <button
-            className={bubbleStyles.button4}
-            onClick={() => no()}
-            style={{
-              backgroundColor: `${sortedBubbleColor(typeSort, "no")}`,
-              border: "none",
-              width: "60px",
-            }}
-          >
-            {props.type === "U/O 2.5" ? "Under" : "No"}
-          </button>
-        </div>
-      ) : null}
+            <button
+              className={bubbleStyles.button4}
+              onClick={() => yes()}
+              style={{
+                backgroundColor: `${sortedBubbleColor(typeSort, "yes")}`,
+                border: "none",
+                width: "60px",
+              }}
+            >
+              {props.type === "U/O 2.5" ? "Over" : "Yes"}
+            </button>
+            <button
+              className={bubbleStyles.button4}
+              onClick={() => no()}
+              style={{
+                backgroundColor: `${sortedBubbleColor(typeSort, "no")}`,
+                border: "none",
+                width: "60px",
+              }}
+            >
+              {props.type === "U/O 2.5" ? "Under" : "No"}
+            </button>
+          </div>
+        ) : null}
 
-      {bttsData && bttsData.length > 0 ? (
-        bttsData.map((element, index) => (
-          <div className={bubbleStyles.ticket} key={index}>
-            <div className={bubbleStyles.dateMain}>
-              {" "}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "left",
-                }}
-              >
-                {element.competition_cluster === "Champions League" ? (
-                  <FontAwesomeIcon icon={faFutbol} size="2x" />
-                ) : element.competition_cluster === "Europa League" ? (
-                  <FontAwesomeIcon icon={faTrophy} size="2x" />
-                ) : (
+        {bttsData && bttsData.length > 0 ? (
+          bttsData.map((element, index) => (
+            <div className={bubbleStyles.ticket} key={index}>
+              <div className={bubbleStyles.dateMain}>
+                {" "}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "left",
+                  }}
+                >
+                  {element.competition_cluster === "Champions League" ? (
+                    <FontAwesomeIcon icon={faFutbol} size="2x" />
+                  ) : element.competition_cluster === "Europa League" ? (
+                    <FontAwesomeIcon icon={faTrophy} size="2x" />
+                  ) : (
+                    <div
+                      style={{ width: "1.2rem", height: "1rem" }}
+                      className={`fi fi-${getCountryCode(
+                        element.competition_cluster
+                      )}`}
+                    ></div>
+                  )}
+                  &nbsp;&nbsp;&nbsp;
                   <div
-                    style={{ width: "1.2rem", height: "1rem" }}
-                    className={`fi fi-${getCountryCode(
-                      element.competition_cluster
-                    )}`}
-                  ></div>
-                )}
+                    className={bubbleStyles.date}
+                    style={{ fontSize: "1.1em" }}
+                  >
+                    {element.competition_cluster} - {element.competition_name}{" "}
+                  </div>
+                </div>
                 &nbsp;&nbsp;&nbsp;
                 <div
                   className={bubbleStyles.date}
-                  style={{ fontSize: "1.1em" }}
+                  style={{
+                    fontSize: "1.1em",
+                    display: "flex",
+                    justifyContent: "right",
+                  }}
                 >
-                  {element.competition_cluster} - {element.competition_name}{" "}
+                  {" "}
+                  {`${
+                    zone !== ""
+                      ? convertTZ(element.start_date + "+0000", zone)
+                      : null
+                  }`}{" "}
                 </div>
               </div>
-              &nbsp;&nbsp;&nbsp;
-              <div
-                className={bubbleStyles.date}
-                style={{
-                  fontSize: "1.1em",
-                  display: "flex",
-                  justifyContent: "right",
-                }}
-              >
-                {" "}
-                {`${
-                  zone !== ""
-                    ? convertTZ(element.start_date + "+0000", zone)
-                    : null
-                }`}{" "}
-              </div>
-            </div>
 
-            <div className={bubbleStyles.rightData}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "left",
-                  width: "84%",
-                }}
-              >
-                <p className={bubbleStyles.federation} style={{ margin: "0" }}>
-                  {element.home_team}
-                </p>
-                <p
-                  className={bubbleStyles.federation}
-                  style={{ fontSize: "0.6rem", margin: "0" }}
+              <div className={bubbleStyles.rightData}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "left",
+                    width: "84%",
+                  }}
                 >
-                  vs
-                </p>
-                <p className={bubbleStyles.federation} style={{ margin: "0" }}>
-                  {element.away_team}
-                </p>
-              </div>
-              <div className={bubbleStyles.leftData}>
-                <div className={bubbleStyles.odds}>
-                  {" "}
-                  {props.type === "U/O 2.5"
-                    ? "U/O 2.5"
-                    : element.market.toUpperCase()}{" "}
+                  <p
+                    className={bubbleStyles.federation}
+                    style={{ margin: "0" }}
+                  >
+                    {element.home_team}
+                  </p>
+                  <p
+                    className={bubbleStyles.federation}
+                    style={{ fontSize: "0.6rem", margin: "0" }}
+                  >
+                    vs
+                  </p>
+                  <p
+                    className={bubbleStyles.federation}
+                    style={{ margin: "0" }}
+                  >
+                    {element.away_team}
+                  </p>
+                </div>
+                <div className={bubbleStyles.leftData}>
                   <div className={bubbleStyles.odds}>
-                    <b>
-                      {props.type === "U/O 2.5"
-                        ? element.prediction === "yes"
-                          ? "OVER"
-                          : "UNDER"
-                        : element.prediction.toUpperCase()}
-                    </b>
+                    {" "}
+                    {props.type === "U/O 2.5"
+                      ? "U/O 2.5"
+                      : element.market.toUpperCase()}{" "}
+                    <div className={bubbleStyles.odds}>
+                      <b>
+                        {props.type === "U/O 2.5"
+                          ? element.prediction === "yes"
+                            ? "OVER"
+                            : "UNDER"
+                          : element.prediction.toUpperCase()}
+                      </b>
+                    </div>
+                  </div>
+                  <div className={bubbleStyles.odds}>
+                    {" "}
+                    {element.odds[element.prediction]}
                   </div>
                 </div>
-                <div className={bubbleStyles.odds}>
-                  {" "}
-                  {element.odds[element.prediction]}
-                </div>
               </div>
             </div>
+          ))
+        ) : (
+          <div className={bubbleStyles.ldsspinner}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
-        ))
-      ) : (
-        <div className={bubbleStyles.ldsspinner}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      )}
-      {/* <div style={{ marginTop: "15px", marginBottom: "15px" }}>
+        )}
+        {/* <div style={{ marginTop: "15px", marginBottom: "15px" }}>
         {" "}
         <p style={{ fontSize: "0.7rem" }}>MatchPredictor.net</p>
         <p style={{ fontSize: "0.6rem" }}>
           *responsible betting. not financial advice
         </p>
       </div> */}
+      </div>
     </div>
   );
 };

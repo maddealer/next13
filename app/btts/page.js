@@ -52,22 +52,26 @@ const Btts = () => {
   }, []);
   return (
     <>
-      <div className={bttsStyles.bg}>
-        <Menu />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            width: "100%",
-          }}
-        >
-          <h5 className={bttsStyles.header} style={{ marginBottom: "0" }}>
-            Both Teams To Score
-          </h5>
+      <div className={bttsStyles.main}>
+        <div className={bttsStyles.box}>
+          <div style={{ width: "100%", maxWidth: "860px" }}>
+            <Menu />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "100%",
+              }}
+            >
+              <h5 className={bttsStyles.header} style={{ marginBottom: "0" }}>
+                Both Teams To Score
+              </h5>
+            </div>
+            <BttsBubble data={btts} type="Btts" />
+          </div>
         </div>
-        <BttsBubble data={btts} type="Btts" />
       </div>
       <Footer />
     </>
