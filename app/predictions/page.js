@@ -38,6 +38,7 @@ import PredictionsBubble from "../components/PredictionsBubble";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import MainButtons from "../components/MainButtons";
 
 function Predictions() {
   const dispatch = useDispatch();
@@ -238,69 +239,9 @@ function Predictions() {
         <div className={crystalStyles.box}>
           <div style={{ width: "100%", maxWidth: "860px" }}>
             <Menu />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "15px 15px",
-                paddingBottom: "5px",
-              }}
-            >
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="btts"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={interFont.style}>BTTS</span>
-                </Link>
-              </div>
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="predictions"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={interFont.style}>Predictions</span>
-                </Link>
-              </div>
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="over25"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={interFont.style}>U/O 2.5</span>
-                </Link>
-              </div>
-            </div>
+
+            <MainButtons />
+
             {/* UEFA BUTTONS LEAGUES */}
             {!loading ? (
               <>

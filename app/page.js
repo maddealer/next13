@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import CookieConsent from "./components/Cookies";
 // import Menu from "../Menu";
 import localFont from "next/font/local";
+import MainButtons from "./components/MainButtons";
 const dayseOne = localFont({ src: "../fonts/DaysOne-Regular.ttf" });
 const linksTo = localFont({ src: "../fonts/Inter-VariableFont_slnt,wght.ttf" });
 const Main = () => {
@@ -19,68 +20,8 @@ const Main = () => {
           <div style={{ height: "100vh", width: "100%", maxWidth: "860px" }}>
             <Menu />
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "15px 15px",
-              }}
-            >
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="btts"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={linksTo.style}>BTTS</span>
-                </Link>
-              </div>
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="predictions"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={linksTo.style}>Predictions</span>
-                </Link>
-              </div>
-              <div
-                style={{
-                  height: "30px",
-                  width: "105px",
-                  borderBottom: "1px solid #ff7a00",
-                  textAlign: "center",
-                }}
-              >
-                <Link
-                  href="over25"
-                  style={{
-                    textDecoration: "none",
-                    color: "#000000",
-                  }}
-                >
-                  <span style={linksTo.style}>U/O 2.5</span>
-                </Link>
-              </div>
-            </div>
+            <MainButtons />
+
             <div
               style={{
                 display: "flex",
