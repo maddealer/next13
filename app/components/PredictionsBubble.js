@@ -9,6 +9,7 @@ import {
   faFutbolBall,
   faTrophy,
   faFutbol,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 const PredictionsBubble = (props) => {
@@ -54,7 +55,11 @@ const PredictionsBubble = (props) => {
     >
       {classicData && classicData.length > 0 ? (
         classicData.map((element, index) => (
-          <div className={bubbleStyles.ticket} key={index}>
+          <div
+            className={bubbleStyles.ticket}
+            style={{ padding: "3px 10px" }}
+            key={index}
+          >
             <div className={bubbleStyles.dateMain}>
               {" "}
               <div
@@ -104,7 +109,7 @@ const PredictionsBubble = (props) => {
             <div
               className={bubbleStyles.rightData}
               style={{
-                padding: "10px 0",
+                padding: "2px 0",
               }}
             >
               <div
@@ -142,14 +147,31 @@ const PredictionsBubble = (props) => {
                     <b style={{ fontSize: "1.2em" }}>
                       {element.prediction.toUpperCase()}
                     </b>
-                  </div>
+                  </div>{" "}
+                  <Link
+                    href={`/predictions/${element.id}`}
+                    style={{
+                      textDecoration: "none",
+                      display: "flex",
+                      justifyContent: "right",
+                      alignItems: "senter",
+                      color: "#ffffff",
+
+                      cursor: "pointer",
+
+                      fontSize: "1em",
+                    }}
+                  >
+                    more...
+                    {/* more <FontAwesomeIcon icon={faArrowRight} size="xs" /> */}
+                  </Link>
                 </div>
                 {/* <div className={bubbleStyles.odds}>
                   {element.odds[element.prediction]}
                 </div> */}
               </div>
             </div>
-            <Link
+            {/* <Link
               href={`/predictions/${element.id}`}
               style={{
                 textDecoration: "none",
@@ -162,8 +184,8 @@ const PredictionsBubble = (props) => {
                 fontSize: "0.8em",
               }}
             >
-              Details
-            </Link>
+              <FontAwesomeIcon icon={faArrowRight} size="xs" />
+            </Link> */}
           </div>
         ))
       ) : (

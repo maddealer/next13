@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
-    padding: 10px 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     /* border: 2px solid #c5c5c5; */
     background: #e3e4e6;
@@ -57,7 +57,7 @@
         align-items: center;
         width: 100%;
         font-size: 0.6em;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
     }
     .odds{
         font-size: 0.8rem;
