@@ -37,7 +37,7 @@ function MainButtons(props) {
           href="/btts"
           style={{
             textDecoration: "none",
-            color: `${path === "/btts" ? "#ffffff" : "#000000"}`,
+            color: `${path === "/btts" ? "#000000" : "#000000"}`,
           }}
         >
           <span style={interFont.style}>BTTS</span>
@@ -62,7 +62,7 @@ function MainButtons(props) {
           href="/predictions"
           style={{
             textDecoration: "none",
-            color: `${path === "/predictions" ? "#ffffff" : "#000000"}`,
+            color: `${path === "/predictions" ? "#000000" : "#000000"}`,
           }}
         >
           <span style={interFont.style}>Predictions</span>
@@ -87,7 +87,7 @@ function MainButtons(props) {
           href="/over25"
           style={{
             textDecoration: "none",
-            color: `${path === "/over25" ? "#ffffff" : "#000000"}`,
+            color: `${path === "/over25" ? "#000000" : "#000000"}`,
           }}
         >
           <span style={interFont.style}>U/O 2.5</span>

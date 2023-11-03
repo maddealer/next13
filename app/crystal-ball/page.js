@@ -28,6 +28,7 @@ import axios from "axios";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Footer from "../components/Footer";
 import backgroundImage from "../../public/goldball.png";
+import MainButtons from "../components/MainButtons";
 const CrystalBall = () => {
   const [localData, setLocalData] = useState();
   const [btts, setBtts] = useState();
@@ -210,6 +211,7 @@ const CrystalBall = () => {
         <div className={crystalStyles.box}>
           <div style={{ width: "100%", maxWidth: "860px" }}>
             <Menu />
+
             <div
               style={{
                 // use the src property of the image object
@@ -222,6 +224,7 @@ const CrystalBall = () => {
                 opacity: "0.4",
               }}
             ></div>
+
             <div
               style={{
                 position: "absolute",
@@ -230,68 +233,7 @@ const CrystalBall = () => {
                 maxWidth: "860px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "15px 15px",
-                }}
-              >
-                <div
-                  style={{
-                    height: "30px",
-                    width: "105px",
-                    borderBottom: "1px solid #ff7a00",
-                    textAlign: "center",
-                  }}
-                >
-                  <Link
-                    href="btts"
-                    style={{
-                      textDecoration: "none",
-                      color: "#000000",
-                    }}
-                  >
-                    <span style={linksTo.style}>BTTS</span>
-                  </Link>
-                </div>
-                <div
-                  style={{
-                    height: "30px",
-                    width: "105px",
-                    borderBottom: "1px solid #ff7a00",
-                    textAlign: "center",
-                  }}
-                >
-                  <Link
-                    href="predictions"
-                    style={{
-                      textDecoration: "none",
-                      color: "#000000",
-                    }}
-                  >
-                    <span style={linksTo.style}>Predictions</span>
-                  </Link>
-                </div>
-                <div
-                  style={{
-                    height: "30px",
-                    width: "105px",
-                    borderBottom: "1px solid #ff7a00",
-                    textAlign: "center",
-                  }}
-                >
-                  <Link
-                    href="over25"
-                    style={{
-                      textDecoration: "none",
-                      color: "#000000",
-                    }}
-                  >
-                    <span style={linksTo.style}>U/O 2.5</span>
-                  </Link>
-                </div>
-              </div>
+              <MainButtons />
               <div className={crystalStyles.header}>
                 <div
                   style={{
@@ -355,7 +297,6 @@ const CrystalBall = () => {
                   <span style={wisdomFont.style}>WISDOM</span>
                 </p>
               </div>
-
               {!load1 && !load2 ? (
                 <>
                   <div
