@@ -38,3 +38,40 @@
     margin:0.2em auto;
     }
     }
+
+    .main{
+        /* background: rgb(14,129,183);
+      background: linear-gradient(180deg, rgba(14,129,183,1) 25%, rgba(34,185,217,0.4290091036414566) 100%); */
+      /* background: rgb(201,204,207);
+      background: linear-gradient(180deg, rgba(201,204,207,1) 35%, rgba(211,241,247,1) 100%); */
+      /* background: rgb(210,233,255);
+      background: linear-gradient(180deg, rgba(210,233,255,1) 25%, rgba(138,225,254,0.4290091036414566) 100%);   */
+      /* height: 100vh; */
+      width: 100%;
+      
+      }
+      .box {
+        margin: 0 auto;
+        width: 100% ;
+        /* height: 100vh; */
+        position: relative;
+        overflow: hidden;
+        display: flex;
+      justify-content: center;
+      align-items: center;
+        /* border: 3px solid #ffffff;
+        border-radius: 3px;
+        
+        background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) no-repeat center/5px 100%;
+        background-color: #049910;
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+      }
+      .header{
+        color:#505050;
+        text-shadow: 0.02em 0.02em rgba(172, 172, 172, 0.5);
+        font-size: 1.6em;
+        margin-top: 0px;
+        font-weight: 100;
+    }

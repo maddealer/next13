@@ -34,7 +34,7 @@ function MainButtons(props) {
         }}
       >
         <Link
-          href="btts"
+          href="/btts"
           style={{
             textDecoration: "none",
             color: `${path === "/btts" ? "#ffffff" : "#000000"}`,
@@ -59,7 +59,7 @@ function MainButtons(props) {
         }}
       >
         <Link
-          href="predictions"
+          href="/predictions"
           style={{
             textDecoration: "none",
             color: `${path === "/predictions" ? "#ffffff" : "#000000"}`,
@@ -84,7 +84,7 @@ function MainButtons(props) {
         }}
       >
         <Link
-          href="over25"
+          href="/over25"
           style={{
             textDecoration: "none",
             color: `${path === "/over25" ? "#ffffff" : "#000000"}`,
