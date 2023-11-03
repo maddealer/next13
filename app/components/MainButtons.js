@@ -23,7 +23,7 @@ function MainButtons(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "30px",
+          height: "35px",
           width: "105px",
           borderBottom: `${
             path === "/btts" ? "2px solid #ff7a00" : "1px solid #ff7a00"
@@ -48,7 +48,7 @@ function MainButtons(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "30px",
+          height: "35px",
           width: "105px",
           borderBottom: `${
             path === "/predictions" ? "2px solid #ff7a00" : "1px solid #ff7a00"
@@ -73,7 +73,7 @@ function MainButtons(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "30px",
+          height: "35px",
           width: "105px",
           borderBottom: `${
             path === "/over25" ? "2px solid #ff7a00" : "1px solid #ff7a00"

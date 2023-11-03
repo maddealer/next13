@@ -8,10 +8,11 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Footer from "../components/Footer";
 import "../global.css";
 import Link from "next/link";
-import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import MainButtons from "../components/MainButtons";
 // const dayseOne = localFont({ src: "../fonts/DaysOne-Regular.ttf" });
+import localFont from "next/font/local";
+
 const interFont = localFont({
   src: "../../fonts/Inter-VariableFont_slnt,wght.ttf",
 });
@@ -77,7 +78,12 @@ const Btts = () => {
             >
               <h5
                 className={bttsStyles.header}
-                style={{ marginBottom: "0", color: "#4f8230" }}
+                style={{
+                  marginBottom: "0",
+                  color: "#4f8230",
+                  textShadow: "none",
+                  fontWeight: "100",
+                }}
               >
                 <span span style={dayseOne.style}>
                   Both Teams To Score

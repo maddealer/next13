@@ -7,6 +7,9 @@ import BttsBubble from "../components/BttsBubble";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Footer from "../components/Footer";
 import "../global.css";
+import MainButtons from "../components/MainButtons";
+import localFont from "next/font/local";
+const dayseOne = localFont({ src: "../../fonts/DaysOne-Regular.ttf" });
 
 const Btts = () => {
   const [btts, setBtts] = useState();
@@ -52,22 +55,37 @@ const Btts = () => {
   }, []);
   return (
     <>
-      <div className={over25Styles.bg}>
-        <Menu />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            width: "100%",
-          }}
-        >
-          <h5 className={over25Styles.header} style={{ marginBottom: "0" }}>
-            Under/Over 2.5
-          </h5>
+      <div className={over25Styles.main}>
+        <div className={over25Styles.box}>
+          <div style={{ width: "100%", maxWidth: "860px" }}>
+            <Menu />
+            <MainButtons />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "100%",
+              }}
+            >
+              <h5
+                className={over25Styles.header}
+                style={{
+                  marginBottom: "0",
+                  color: "#4f8230",
+                  textShadow: "none",
+                  fontWeight: "100",
+                }}
+              >
+                <span span style={dayseOne.style}>
+                  Under/Over 2.5
+                </span>
+              </h5>
+            </div>
+            <BttsBubble data={btts} type="U/O 2.5" />
+          </div>
         </div>
-        <BttsBubble data={btts} type="U/O 2.5" />
       </div>
       <Footer />
     </>
