@@ -26,11 +26,11 @@ function MainButtons(props) {
           height: "35px",
           width: "105px",
           borderBottom: `${
-            path === "/btts" ? "2px solid #ff7a00" : "1px solid #ff7a00"
+            path === "/btts" ? "4px solid #ff7a00" : "1px solid #ff7a00"
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/btts" ? "#94b0a0" : "#ffffff"}`,
+          backgroundColor: `${path === "/btts" ? "#c7d8be" : "#ffffff"}`,
         }}
       >
         <Link
@@ -51,11 +51,11 @@ function MainButtons(props) {
           height: "35px",
           width: "105px",
           borderBottom: `${
-            path === "/predictions" ? "2px solid #ff7a00" : "1px solid #ff7a00"
+            path === "/predictions" ? "4px solid #ff7a00" : "1px solid #ff7a00"
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/predictions" ? "#94b0a0" : "#ffffff"}`,
+          backgroundColor: `${path === "/predictions" ? "#c7d8be" : "#ffffff"}`,
         }}
       >
         <Link
@@ -76,11 +76,11 @@ function MainButtons(props) {
           height: "35px",
           width: "105px",
           borderBottom: `${
-            path === "/over25" ? "2px solid #ff7a00" : "1px solid #ff7a00"
+            path === "/over25" ? "4px solid #ff7a00" : "1px solid #ff7a00"
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/over25" ? "#94b0a0" : "#ffffff"}`,
+          backgroundColor: `${path === "/over25" ? "#c7d8be" : "#ffffff"}`,
         }}
       >
         <Link
