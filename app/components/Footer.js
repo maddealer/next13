@@ -11,127 +11,150 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "next-share";
-// import {
-//   FacebookShareButton,
-//   TelegramShareButton,
-//   TwitterShareButton,
-//   WhatsappShareButton,
-// } from "react-share";
-// import {
-//   FacebookIcon,
-//   TelegramIcon,
-//   TwitterIcon,
-//   WhatsappIcon,
-// } from "react-share";
+import localFont from "next/font/local";
+
+const interFont = localFont({
+  src: "../../fonts/Inter-VariableFont_slnt,wght.ttf",
+});
+const dayseOne = localFont({ src: "../../fonts/DaysOne-Regular.ttf" });
 
 const Footer = () => {
   return (
-    <footer className={footerStyles.main}>
-      <div
-        className={footerStyles.container2}
-        style={{
-          marginTop: "20px",
-          flexWrap: "wrap",
-          gap: "10px",
-          padding: "0 20px",
-        }}
+    <div
+      className={footerStyles.main}
+      style={{ alignItems: "center", backgroundColor: "#ffffff" }}
+    >
+      <footer
+        className={footerStyles.main}
+        style={{ maxWidth: "500px", alignItems: "center" }}
       >
-        <Link
+        <div
+          className={footerStyles.container2}
           style={{
-            textDecoration: "none",
-            color: "#000000",
+            marginTop: "0px",
+            width: "100%",
+            color: "#7A8773",
+            fontSize: "1rem",
           }}
-          href="/predictions"
         >
-          Predictions
-        </Link>
-        <Link
+          <ul style={{ color: "#7A8773", paddingLeft: "15px" }}>
+            <li>
+              {" "}
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/predictions"
+              >
+                <span style={interFont.style}>Predictions</span>
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/crystal-ball"
+              >
+                <span style={interFont.style}>CrystalBall</span>
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/about"
+              >
+                <span style={interFont.style}>About</span>
+              </Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/contacts"
+              >
+                <span style={interFont.style}>Contacts</span>
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/terms"
+              >
+                <span style={interFont.style}>TermsOfUse</span>
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                style={{
+                  textDecoration: "none",
+                  color: "#7A8773",
+                }}
+                href="/privacy"
+              >
+                <span style={interFont.style}>PrivacyPolicy</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div
+          className={footerStyles.container2}
           style={{
-            textDecoration: "none",
-            color: "#000000",
+            marginTop: "0px",
+            marginBottom: "10px",
+            fontSize: "1rem",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            color: "#7A8773",
           }}
-          href="/crystal-ball"
         >
-          CrystalBall
-        </Link>
-        <Link
-          style={{
-            textDecoration: "none",
-            color: "#000000",
-          }}
-          href="/about"
-        >
-          About
-        </Link>
-        <Link
-          style={{
-            textDecoration: "none",
-            color: "#000000",
-          }}
-          href="/contacts"
-        >
-          Contacts
-        </Link>
-        {/* </div>
-      <div
-        className={footerStyles.container2}
-        style={{ marginTop: "15px", marginBottom: "15px" }}
-      > */}
-        <Link
-          style={{
-            textDecoration: "none",
-            color: "#000000",
-          }}
-          href="/terms"
-        >
-          TermsOfUse
-        </Link>
-        <Link
-          style={{
-            textDecoration: "none",
-            color: "#000000",
-          }}
-          href="/privacy"
-        >
-          PrivacyPolicy
-        </Link>
-      </div>
+          <p>© MatchPredictor.net / All Rights Reserved. 18+</p>
+        </div>
 
-      <div
-        className={footerStyles.container1}
-        style={{ marginTop: "15px", marginBottom: "15px" }}
-      >
-        {" "}
-        You can share on
-      </div>
-      <div className={footerStyles.container1} style={{ gap: "10px" }}>
-        <FacebookShareButton
-          url={"https://matchpredictor.net"}
-          quote={"Free & Simple Football Match Predictions app."}
-          hashtag={"#football"}
-        >
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
-        <FacebookMessengerShareButton
-          url={"https://matchpredictor.net"}
-          appId={""}
-        >
-          <FacebookMessengerIcon size={32} round />
-        </FacebookMessengerShareButton>
-        <TelegramShareButton
-          url={"https://matchpredictor.net"}
-          title={"Free & Simple Football Match Predictions app."}
-        >
-          <TelegramIcon size={32} round />
-        </TelegramShareButton>
-        <TwitterShareButton
-          url={"https://matchpredictor.net"}
-          title={"Free & Simple Football Match Predictions app."}
-          blankTarget="true"
-        >
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-        {/* <FacebookShareButton
+        <div className={footerStyles.container1} style={{ gap: "10px" }}>
+          <FacebookShareButton
+            url={"https://matchpredictor.net"}
+            quote={"Free & Simple Football Match Predictions app."}
+            hashtag={"#football"}
+          >
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          <FacebookMessengerShareButton
+            url={"https://matchpredictor.net"}
+            appId={""}
+          >
+            <FacebookMessengerIcon size={32} round />
+          </FacebookMessengerShareButton>
+          <TelegramShareButton
+            url={"https://matchpredictor.net"}
+            title={"Free & Simple Football Match Predictions app."}
+          >
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+          <TwitterShareButton
+            url={"https://matchpredictor.net"}
+            title={"Free & Simple Football Match Predictions app."}
+            blankTarget="true"
+          >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          {/* <FacebookShareButton
           url={"https://matchpredictor.net"}
           quote={"Free & Simple Football Match Predictor"}
           hashtag={"#football"}
@@ -167,21 +190,25 @@ const Footer = () => {
         >
           <TelegramIcon size={32} round></TelegramIcon>
         </TelegramShareButton> */}
-      </div>
-      <div
-        className={footerStyles.container2}
-        style={{
-          marginTop: "30px",
-          marginBottom: "10px",
-          fontSize: "0.7em",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          gap: "20px",
-        }}
-      >
-        <p>© MatchPredictor.net - all rights reserved. 18+</p>
-        <p>
-          For help with gambling addiction visit{" "}
+        </div>
+        <div
+          className={footerStyles.container2}
+          style={{
+            marginTop: "30px",
+            marginBottom: "10px",
+            fontSize: "0.8em",
+            justifyContent: "center",
+            flexDirection: "column",
+            flexWrap: "wrap",
+            gap: "0",
+            color: "#7A8773",
+          }}
+        >
+          <p>
+            <span style={interFont.style}>
+              For help with gambling addiction visit
+            </span>
+          </p>{" "}
           <a
             href="https://www.begambleaware.org/"
             target={"_blank"}
@@ -189,9 +216,8 @@ const Footer = () => {
           >
             www.begambleaware.org
           </a>
-        </p>
-      </div>
-      {/* <div
+        </div>
+        {/* <div
         className={footerStyles.container2}
         style={{ marginTop: "10px", marginBottom: "10px", fontSize: "0.7em" }}
       >
@@ -206,29 +232,32 @@ const Footer = () => {
           </a>
         </p>
       </div> */}
-      <div
-        className={footerStyles.container2}
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <a
-          href="https://www.buymeacoffee.com/maddealer"
-          target="_blank"
-          style={{}}
+        <div
+          className={footerStyles.container2}
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <img
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
-            alt="Buy Me A Coffee"
-            style={{ width: "150px", height: "40px" }}
-          />
-        </a>
-      </div>
-      <div className={footerStyles.container2}>
-        <span style={{ fontSize: "0.6em" }}>Created by maddealer 2023</span>
-      </div>
-    </footer>
+          <a
+            href="https://www.buymeacoffee.com/maddealer"
+            target="_blank"
+            style={{}}
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
+              alt="Buy Me A Coffee"
+              style={{ width: "150px", height: "40px" }}
+            />
+          </a>
+        </div>
+        <div className={footerStyles.container2}>
+          <span style={{ fontSize: "0.8em", color: "#7A8773" }}>
+            <span style={interFont.style}>Created by maddealer 2023</span>
+          </span>
+        </div>
+      </footer>
+    </div>
   );
 };
 
