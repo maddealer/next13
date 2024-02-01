@@ -20,10 +20,7 @@ const dayseOne = localFont({ src: "../../fonts/DaysOne-Regular.ttf" });
 
 const Footer = () => {
   return (
-    <div
-      className={footerStyles.main}
-      style={{ alignItems: "center", backgroundColor: "#ffffff" }}
-    >
+    <div className={footerStyles.main0} style={{ alignItems: "center" }}>
       <footer
         className={footerStyles.main}
         style={{ maxWidth: "500px", alignItems: "center" }}
@@ -35,6 +32,7 @@ const Footer = () => {
             width: "100%",
             color: "#7A8773",
             fontSize: "1rem",
+            padding: "0 5px",
           }}
         >
           <ul style={{ color: "#7A8773", paddingLeft: "15px" }}>
@@ -122,6 +120,7 @@ const Footer = () => {
             justifyContent: "center",
             flexWrap: "wrap",
             color: "#7A8773",
+            padding: "0px 5px",
           }}
         >
           <p>© MatchPredictor.net / All Rights Reserved. 18+</p>
