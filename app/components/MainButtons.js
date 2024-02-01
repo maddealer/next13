@@ -30,7 +30,7 @@ function MainButtons(props) {
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/btts" ? "#c7d8be" : "#ffffff"}`,
+          backgroundColor: `${path === "/btts" ? "#c7d8be" : "#ffffff00"}`,
         }}
       >
         <Link
@@ -55,7 +55,9 @@ function MainButtons(props) {
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/predictions" ? "#c7d8be" : "#ffffff"}`,
+          backgroundColor: `${
+            path === "/predictions" ? "#c7d8be" : "#ffffff00"
+          }`,
         }}
       >
         <Link
@@ -80,7 +82,7 @@ function MainButtons(props) {
           }`,
           textAlign: "center",
           borderRadius: "3px",
-          backgroundColor: `${path === "/over25" ? "#c7d8be" : "#ffffff"}`,
+          backgroundColor: `${path === "/over25" ? "#c7d8be" : "#ffffff00"}`,
         }}
       >
         <Link
