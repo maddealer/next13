@@ -231,7 +231,7 @@ const Footer = () => {
           </a>
         </p>
       </div> */}
-        <div
+        {/* <div
           className={footerStyles.container2}
           style={{
             justifyContent: "center",
@@ -249,7 +249,7 @@ const Footer = () => {
               style={{ width: "150px", height: "40px" }}
             />
           </a>
-        </div>
+        </div> */}
         <div className={footerStyles.container2}>
           <span style={{ fontSize: "0.8em", color: "#7A8773" }}>
             <span style={interFont.style}>Created by maddealer 2023</span>
