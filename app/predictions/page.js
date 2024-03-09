@@ -150,7 +150,6 @@ function Predictions() {
         return 0;
       });
     setDataReady(dataNew);
-    // console.log(dataNew);
 
     setLoading1(false);
   };
@@ -218,7 +217,7 @@ function Predictions() {
         .filter((a) => a.competition_name === "Liga MX")
         .filter((a) => a.competition_cluster === "Mexico");
     }
-    if (league === "Premier League") {
+    if (league === "Premier League" && federation === "CONCACAF") {
       dataNew = dataNew
         .filter((a) => a.competition_name === "Premier League")
         .filter((a) => a.competition_cluster === "Canada");
